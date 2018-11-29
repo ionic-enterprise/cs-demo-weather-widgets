@@ -1,0 +1,50 @@
+{
+  "name": "csdemo-weather-widgets",
+  "version": "1.0.0",
+  "description": "Demonstration Weather Widgets",
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build",
+    "bump": "node scripts/bump-version.js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "release": "node scripts/release.js",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
+  },
+  "dependencies": {
+    "date-fns": "~1.29.0"
+  },
+  "devDependencies": {
+    "@stencil/core": "~0.16.0",
+    "@types/jest": "23.3.9",
+    "@types/puppeteer": "1.10.0",
+    "chalk": "^2.4.1",
+    "conventional-changelog": "^1.1.24",
+    "execa": "^0.10.0",
+    "inquirer": "^5.2.0",
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0",
+    "listr": "~0.14.3",
+    "puppeteer": "1.8.0",
+    "rimraf": "^2.6.2",
+    "semver": "~5.6.0",
+    "workbox-build": "3.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kensodemann/csdemo-weather-widgets.git"
+  },
+  "author": "Ken Sodemann <ken@ionic.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kensodemann/csdemo-weather-widgets"
+  },
+  "homepage": "https://github.com/kensodemann/csdemo-weather-widgets"
+}
