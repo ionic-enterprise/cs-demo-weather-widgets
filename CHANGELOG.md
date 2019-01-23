@@ -1,3 +1,8 @@
+<a name="1.0.1"></a>
+## 1.0.1 (2019-01-23)
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/kensodemann/csdemo-weather-widgets/compare/v0.0.10-2...v1.0.0) (2018-11-29)
 

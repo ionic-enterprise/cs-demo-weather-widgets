@@ -1,6 +1,6 @@
 {
   "name": "csdemo-weather-widgets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Demonstration Weather Widgets",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
