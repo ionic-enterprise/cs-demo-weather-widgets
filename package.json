@@ -19,21 +19,21 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
-    "date-fns": "~1.29.0"
+    "date-fns": "~1.30.1"
   },
   "devDependencies": {
-    "@stencil/core": "~0.16.0",
-    "@types/jest": "23.3.9",
-    "@types/puppeteer": "1.10.0",
-    "chalk": "^2.4.1",
-    "conventional-changelog": "^1.1.24",
-    "execa": "^0.10.0",
-    "inquirer": "^5.2.0",
+    "@stencil/core": "~0.17.0",
+    "@types/jest": "~23.3.13",
+    "@types/puppeteer": "1.11.2",
+    "chalk": "~2.4.2",
+    "conventional-changelog": "~3.0.5",
+    "execa": "~1.0.0",
+    "inquirer": "~6.2.1",
     "jest": "23.6.0",
     "jest-cli": "23.6.0",
     "listr": "~0.14.3",
-    "puppeteer": "1.8.0",
-    "rimraf": "^2.6.2",
+    "puppeteer": "1.11.0",
+    "rimraf": "~2.6.3",
     "semver": "~5.6.0",
     "workbox-build": "3.4.1"
   },
