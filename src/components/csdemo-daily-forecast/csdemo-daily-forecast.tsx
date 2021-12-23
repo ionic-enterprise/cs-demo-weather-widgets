@@ -1,4 +1,4 @@
-import { Component, Prop, Watch } from '@stencil/core';
+import { Component, Prop, h, Watch } from '@stencil/core';
 import { format } from 'date-fns';
 import { ConditionIconPaths } from '../../models/condition-icon-paths';
 import { Forecast } from '../../models/forecast';
