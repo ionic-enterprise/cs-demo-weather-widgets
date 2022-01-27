@@ -3,6 +3,9 @@
 }
 
 .description {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   font-size: var(--csdemo-daily-forecast-description-font-size);
   font-weight: var(--csdemo-daily-forecast-description-font-weight);
   padding-left: var(--csdemo-daily-forecast-description-padding-left);
@@ -18,4 +21,15 @@
 
 .icon img {
   height: var(--csdemo-daily-forecast-image-height);
+}
+
+.temperature-group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.temperature-group .label {
+  margin-left: .25em;
+  flex: 1 0 auto;
 }

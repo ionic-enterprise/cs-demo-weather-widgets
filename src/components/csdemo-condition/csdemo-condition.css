@@ -1,3 +1,10 @@
+.condition-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .condition-image img {
   height: var(--csdemo-condition-image-height);
 }

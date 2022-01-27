@@ -51,30 +51,32 @@ export class csdemoDailyForecast {
     return (
       this.forecasts &&
       this.forecasts.length &&
-      format(this.forecasts[0].date, 'ddd, MMM D, YYYY')
+      format(this.forecasts[0].date, 'MMM d, yyyy')
     );
   }
 
   render() {
+    const label = this.weatherCondition.description(this.condition);
     return (
       <div class="container">
         {this.iconUrl && (
           <div class="icon">
-            <img src={this.iconUrl} />
+            <img alt={label} src={this.iconUrl} />
           </div>
         )}
         <div class="description">
           <div class="date">{this.dateString()}</div>
           <csdemo-condition condition={this.condition} />
-          <div>
-            Low:{' '}
+          <div class="temperature-group">
+            <span class="label">Low:{' '}</span>
+
             <csdemo-temperature
               temperature={this.weatherCondition.low(this.forecasts)}
               scale={this.scale}
             />
           </div>
-          <div>
-            High:{' '}
+          <div class="temperature-group">
+          <span class="label">High:{' '}</span>
             <csdemo-temperature
               temperature={this.weatherCondition.high(this.forecasts)}
               scale={this.scale}

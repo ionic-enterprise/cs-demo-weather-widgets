@@ -23,11 +23,12 @@ export class csdemoCondition {
 
   render() {
     const url = this.weatherCondition.imageUrl(this.condition, this.iconPaths);
+    const label = this.weatherCondition.description(this.condition);
     return (
-      <div style={this.getBackgroundStyle()}>
-        <div class="condition-image">{url && <img src={url} />}</div>
+      <div class="condition-container" style={this.getBackgroundStyle()}>
+        <div class="condition-image">{url && <img alt={label} src={url} />}</div>
         <div class="condition-label">
-          {this.weatherCondition.description(this.condition)}
+          {label}
         </div>
       </div>
     );
