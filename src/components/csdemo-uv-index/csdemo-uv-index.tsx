@@ -60,7 +60,7 @@ export class csdemoUVIndex {
 
   render() {
     return (
-      <div class={this.mainClass()}>
+      <div class={ `${this.mainClass()} uv-index-container`}>
         <div class="value">
           {this.uvIndex || this.uvIndex === 0 ? this.uvIndex.toFixed(1) : ''}
         </div>

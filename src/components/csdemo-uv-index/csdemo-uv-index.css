@@ -1,3 +1,11 @@
+:host {
+  align-self: stretch;
+}
+.uv-index-container {
+  align-items: center;
+  display: flex;
+}
+
 .value {
   font-size: var(--csdemo-uv-index-value-font-size);
   font-weight: var(--csdemo-uv-index-value-font-weight);
@@ -6,6 +14,7 @@
 .description {
   font-size: var(--csdemo-uv-index-description-font-size);
   font-weight: var(--csdemo-uv-index-description-font-weight);
+  margin-left: .5em;
 }
 
 .low-risk {

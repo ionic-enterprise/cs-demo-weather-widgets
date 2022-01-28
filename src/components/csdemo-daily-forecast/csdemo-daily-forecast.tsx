@@ -51,7 +51,7 @@ export class csdemoDailyForecast {
     return (
       this.forecasts &&
       this.forecasts.length &&
-      format(this.forecasts[0].date, 'MMM d, yyyy')
+      format(new Date(this.forecasts[0].date), 'E MMM d, yyyy')
     );
   }
 
@@ -68,19 +68,15 @@ export class csdemoDailyForecast {
           <div class="date">{this.dateString()}</div>
           <csdemo-condition condition={this.condition} />
           <div class="temperature-group">
-            <span class="label">Low:{' '}</span>
+            <div class="temperature-item temperature-low">
+              <span class="label">Low:{' '}</span>
+              <csdemo-temperature temperature={this.weatherCondition.low(this.forecasts)} scale={this.scale} />
+            </div>
+            <div class="temperature-item temperature-high">
+              <span class="label">High:{' '}</span>
+              <csdemo-temperature temperature={this.weatherCondition.high(this.forecasts)} scale={this.scale}/>
+            </div>
 
-            <csdemo-temperature
-              temperature={this.weatherCondition.low(this.forecasts)}
-              scale={this.scale}
-            />
-          </div>
-          <div class="temperature-group">
-          <span class="label">High:{' '}</span>
-            <csdemo-temperature
-              temperature={this.weatherCondition.high(this.forecasts)}
-              scale={this.scale}
-            />
           </div>
         </div>
       </div>

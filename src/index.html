@@ -26,7 +26,7 @@
   <h1>Weather Widgets</h1>
   <div class="comp-container">
     <div class="comp-group">
-      <h2>Condition</h2>
+      <h2>Temperature</h2>
         <csdemo-temperature temperature="273.15" scale="C"></csdemo-temperature>
         <csdemo-temperature temperature="273.15" scale="F"></csdemo-temperature>
         <csdemo-temperature temperature="290.15" scale="C"></csdemo-temperature>
@@ -35,18 +35,30 @@
         <csdemo-temperature temperature="373.15" scale="F"></csdemo-temperature>
     </div>
     <div class="comp-group">
-      <h2>Temperature</h2>
-        <csdemo-condition condition="220"></csdemo-condition>
-        <csdemo-condition condition="220"></csdemo-condition>
+      <h2>Condition</h2>
+        <csdemo-condition condition="200"></csdemo-condition>
+        <csdemo-condition condition="230"></csdemo-condition>
+        <csdemo-condition condition="300"></csdemo-condition>
         <csdemo-condition condition="500"></csdemo-condition>
+        <csdemo-condition condition="600"></csdemo-condition>
+        <csdemo-condition condition="701"></csdemo-condition>
+        <csdemo-condition condition="800"></csdemo-condition>
+        <csdemo-condition condition="801"></csdemo-condition>
+        <csdemo-condition condition="404"></csdemo-condition>
     </div>
     <div class="comp-group">
       <h2>Daily Forecast</h2>
         <csdemo-daily-forecast scale="F"></csdemo-daily-forecast>
     </div>
+    <div class="comp-group">
+      <h2>UV Index</h2>
+      <csdemo-uv-index uv-index="2"></csdemo-uv-index>
+      <csdemo-uv-index uv-index="3"></csdemo-uv-index>
+      <csdemo-uv-index uv-index="6"></csdemo-uv-index>
+    </div>
   </div>
   <script type="text/javascript">
-    const paths = { sunny: './assets/images/sunny.png',  cloudy: './assets/images/cloudy.png',  lightRain: './assets/images/rain.png',  shower: './assets/images/shower.png',  sunnyThunderStorm: './assets/images/partial-tstorm.png',  thunderStorm: './assets/images/tstorm.png',  fog: './assets/images/fog.png',  snow: './assets/images/snow.png',  unknown: './assets/images/unknown.png'};
+    const paths = { sunny: './assets/images/sunny.png',  cloudy: './assets/images/cloudy.png',  lightRain: './assets/images/light-rain.png',  shower: './assets/images/shower.png',  sunnyThunderStorm: './assets/images/sunny-tstorm.png',  thunderStorm: './assets/images/tstorm.png',  fog: './assets/images/fog.png',  snow: './assets/images/snow.png',  unknown: './assets/images/unknown.png'};
     const sampleForecasts = [
       {
         condition: 800,

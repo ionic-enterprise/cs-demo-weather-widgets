@@ -137,9 +137,9 @@ describe('Weather Condition Service', () => {
       paths = {
         sunny: './assets/images/sunny.png',
         cloudy: './assets/images/cloudy.png',
-        lightRain: './assets/images/rain.png',
+        lightRain: './assets/images/light-rain.png',
         shower: './assets/images/shower.png',
-        sunnyThunderStorm: './assets/images/partial-tstorm.png',
+        sunnyThunderStorm: './assets/images/sunny-tstorm.png',
         thunderStorm: './assets/images/tstorm.png',
         fog: './assets/images/fog.png',
         snow: './assets/images/snow.png',
