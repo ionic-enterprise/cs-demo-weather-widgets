@@ -31,15 +31,15 @@ describe('csdemo-daily-forecast', () => {
 
     beforeEach(async () => {
       paths = {
-        sunny: './imgs/sunny.png',
-        cloudy: './imgs/cloudy.png',
-        lightRain: './imgs/rain.png',
-        shower: './imgs/shower.png',
-        sunnyThunderStorm: './imgs/partial-tstorm.png',
-        thunderStorm: './imgs/tstorm.png',
-        fog: './imgs/fog.png',
-        snow: './imgs/snow.png',
-        unknown: './imgs/unknown.png'
+        sunny: './assets/images/sunny.png',
+        cloudy: './assets/images/cloudy.png',
+        lightRain: './assets/images/light-rain.png',
+        shower: './assets/images/shower.png',
+        sunnyThunderStorm: './assets/images/sunny-tstorm.png',
+        thunderStorm: './assets/images/tstorm.png',
+        fog: './assets/images/fog.png',
+        snow: './assets/images/snow.png',
+        unknown: './assets/images/unknown.png'
       };
 
       forecasts = [
@@ -100,12 +100,12 @@ describe('csdemo-daily-forecast', () => {
 
     it('displays the date', async () => {
       const dateElement = await page.find('csdemo-daily-forecast >>> .date');
-      expect(dateElement.textContent).toEqual('Sun, Jun 17, 2018');
+      expect(dateElement.textContent).toEqual('Sun Jun 17, 2018');
     });
 
     it('displays the icon for the worst condition', async () => {
       const imgElement = await page.find('csdemo-daily-forecast >>> img');
-      expect(imgElement.getAttribute('src')).toEqual('./imgs/snow.png');
+      expect(imgElement.getAttribute('src')).toEqual('./assets/images/snow.png');
     });
 
     it('displays the label for the worst condition', async () => {
