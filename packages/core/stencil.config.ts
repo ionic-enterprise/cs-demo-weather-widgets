@@ -1,6 +1,7 @@
 import { Config } from '@stencil/core';
 import { angularOutputTarget as angular } from '@stencil/angular-output-target';
 import { reactOutputTarget as react } from '@stencil/react-output-target';
+import { vueOutputTarget as vue } from '@stencil/vue-output-target';
 
 export const config: Config = {
   namespace: 'csdemoweather',
@@ -14,6 +15,12 @@ export const config: Config = {
     react({
       componentCorePackage: '@ionic-enterprise/cs-demo-weather-widgets',
       proxiesFile: '../react/src/components/stencil-generated/index.ts',
+      includeDefineCustomElements: false,
+      includeImportCustomElements: true,
+    }),
+    vue({
+      componentCorePackage: '@ionic-enterprise/cs-demo-weather-widgets',
+      proxiesFile: '../vue/src/components.ts',
       includeDefineCustomElements: false,
       includeImportCustomElements: true,
     }),
