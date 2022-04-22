@@ -194,7 +194,7 @@ Other packages within the monorepo will have their own `.gitignore` files with o
 
 The following packages have been created. See the `NOTES.md` files for details on how they were created:
 
-- **[core](packages/NOTES.md)**: the Stencil based web components, distributed on via NPM as `@ionic-enterprise/cs-demo-weather-widgets`
+- **[core](packages/core/NOTES.md)**: the Stencil based web components, distributed on via NPM as `@ionic-enterprise/cs-demo-weather-widgets`
 - **[angular](packages/angular/NOTES.md)**: Angular proxies, distributed via NPM as `@ionic-enterprise/cs-demo-weather-widgets angular`
 - **[react](packages/react/NOTES.md)**: React proxies, distributed via NPM as `@ionic-enterprise/cs-demo-weather-widgets-react`
 - **[vue](packages/vue/NOTES.md)**: Vue proxies, distributed via NPM as `@ionic-enterprise/cs-demo-weather-widgets-vue`
