@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run --scope @ionic-enterprise/cs-demo-weather-widgets build",
+    "build": "lerna run --scope @ionic-enterprise/cs-demo-weather-widgets build && lerna run --parallel --ignore @ionic-enterprise/cs-demo-weather-widgets build",
     "lint": "lerna run lint --parallel",
     "prepare": "husky install",
     "preversion": "npm run lint && npm run test && npm run build",
