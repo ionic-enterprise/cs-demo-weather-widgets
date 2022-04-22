@@ -1,6 +1,6 @@
 {
   "packages": ["packages/*"],
-  "version": "1.1.0",
+  "version": "1.1.1",
   "command": {
     "create": {
       "homepage": "https://github.com/ionic-enterprise/cs-demo-weather-widgets",
