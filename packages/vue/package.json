@@ -35,5 +35,8 @@
   },
   "dependencies": {
     "@ionic-enterprise/cs-demo-weather-widgets": "^1.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
