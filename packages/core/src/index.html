@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+      integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5"
+      crossorigin="anonymous"
+    />
+    <style>
+      .comp-container {
+        display: flex;
+        margin: 1em;
+      }
+      .comp-group {
+        align-items: center;
+        display: flex;
+        flex-flow: column;
+        padding: 0.5em;
+      }
+    </style>
+    <script type="module" src="/build/csdemoweather.esm.js"></script>
+    <script nomodule src="/build/csdemoweather.js"></script>
+  </head>
+
+  <body>
+    <h1>Weather Widgets</h1>
+    <div class="comp-container">
+      <div class="comp-group">
+        <h2>Temperature</h2>
+        <csdemo-temperature temperature="273.15" scale="C"></csdemo-temperature>
+        <csdemo-temperature temperature="273.15" scale="F"></csdemo-temperature>
+        <csdemo-temperature temperature="290.15" scale="C"></csdemo-temperature>
+        <csdemo-temperature temperature="290.15" scale="F"></csdemo-temperature>
+        <csdemo-temperature temperature="373.15" scale="C"></csdemo-temperature>
+        <csdemo-temperature temperature="373.15" scale="F"></csdemo-temperature>
+      </div>
+      <div class="comp-group">
+        <h2>Condition</h2>
+        <csdemo-condition condition="200"></csdemo-condition>
+        <csdemo-condition condition="230"></csdemo-condition>
+        <csdemo-condition condition="300"></csdemo-condition>
+        <csdemo-condition condition="500"></csdemo-condition>
+        <csdemo-condition condition="600"></csdemo-condition>
+        <csdemo-condition condition="701"></csdemo-condition>
+        <csdemo-condition condition="800"></csdemo-condition>
+        <csdemo-condition condition="801"></csdemo-condition>
+        <csdemo-condition condition="404"></csdemo-condition>
+      </div>
+      <div class="comp-group">
+        <h2>Daily Forecast</h2>
+        <csdemo-daily-forecast scale="F"></csdemo-daily-forecast>
+      </div>
+      <div class="comp-group">
+        <h2>UV Index</h2>
+        <csdemo-uv-index uv-index="2"></csdemo-uv-index>
+        <csdemo-uv-index uv-index="3"></csdemo-uv-index>
+        <csdemo-uv-index uv-index="6"></csdemo-uv-index>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const paths = {
+        sunny: './assets/images/sunny.png',
+        cloudy: './assets/images/cloudy.png',
+        lightRain: './assets/images/light-rain.png',
+        shower: './assets/images/shower.png',
+        sunnyThunderStorm: './assets/images/sunny-tstorm.png',
+        thunderStorm: './assets/images/tstorm.png',
+        fog: './assets/images/fog.png',
+        snow: './assets/images/snow.png',
+        unknown: './assets/images/unknown.png',
+      };
+      const sampleForecasts = [
+        {
+          condition: 800,
+          date: Date.parse('1995-12-17'),
+          temperature: 299.15,
+        },
+        {
+          condition: 800,
+          date: Date.parse('1995-12-17'),
+          temperature: 291.483,
+        },
+      ];
+      const conditions = document.querySelectorAll('csdemo-condition, csdemo-daily-forecast');
+      const forecasts = document.querySelectorAll('csdemo-daily-forecast');
+      forecasts.forEach((elem, key, parent) => {
+        console.log('forecast', elem, key);
+        elem.iconPaths = paths;
+        elem.forecasts = sampleForecasts;
+        elem.scale = 'F';
+      });
+      conditions.forEach((elem, key, parent) => {
+        console.log('condition', elem, key);
+        elem.iconPaths = paths;
+      });
+    </script>
+  </body>
+</html>
