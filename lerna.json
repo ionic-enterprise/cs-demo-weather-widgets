@@ -2,7 +2,13 @@
   "packages": ["packages/*"],
   "version": "1.1.0",
   "command": {
+    "create": {
+      "homepage": "https://github.com/ionic-enterprise/cs-demo-weather-widgets",
+      "license": "MIT"
+    },
     "version": {
+      "allowBranch": "main",
+      "conventionalCommits": true,
       "message": "chore(release): %s"
     }
   }

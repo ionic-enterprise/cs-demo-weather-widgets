@@ -4,7 +4,6 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run --scope @ionic-enterprise/cs-demo-weather-widgets build",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "lint": "lerna run lint --parallel",
     "prepare": "husky install",
     "preversion": "npm run lint && npm run test && npm run build",
@@ -14,6 +13,7 @@
   "devDependencies": {
     "@ionic/prettier-config": "~2.0.0",
     "conventional-changelog": "~3.1.25",
+    "conventional-changelog-cli": "~2.2.2",
     "husky": "~7.0.4",
     "lerna": "^4.0.0",
     "prettier": "~2.6.2",
