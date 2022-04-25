@@ -3,7 +3,7 @@
 }
 .uv-index-container {
   align-items: center;
-  display: flex;
+  display: inline-flex;
 }
 
 .value {

@@ -1,5 +1,5 @@
 .condition-container {
-  display: flex;
+  display: inline-flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;

@@ -1,11 +1,11 @@
 .container {
-  display: var(--csdemo-daily-forecast-display);
+  display: flex;
+  align-items: center;
 }
 
 .description {
-  display: flex;
+  display: inline-flex;
   flex-flow: column nowrap;
-  align-items: center;
   font-size: var(--csdemo-daily-forecast-description-font-size);
   font-weight: var(--csdemo-daily-forecast-description-font-weight);
   padding-left: var(--csdemo-daily-forecast-description-padding-left);
@@ -19,19 +19,23 @@
   font-weight: var(--csdemo-daily-forecast-date-font-weight);
 }
 
+.icon {
+  flex: 1 0 auto;
+}
+
 .icon img {
   height: var(--csdemo-daily-forecast-image-height);
 }
 
 .temperature-group {
-  display: flex;
+  display: inline-flex;
   flex-flow: column;
   width: 100%;
 }
 
 .temperature-item {
   align-items: center;
-  display: flex;
+  display: inline-flex;
   flex: 1 0 auto;
   width: 100%;
 }
