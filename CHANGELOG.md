@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/ionic-enterprise/cs-demo-weather-widgets/compare/v1.2.1...v1.2.2) (2022-04-26)
+
+### Bug Fixes
+
+- **styling:** switch the styling for better flow in consuming apps ([e37d2a4](https://github.com/ionic-enterprise/cs-demo-weather-widgets/commit/e37d2a4ebed361247879d1c5900a093c995262c7))
+
 ## [1.2.1](https://github.com/ionic-enterprise/cs-demo-weather-widgets/compare/v1.2.0...v1.2.1) (2022-04-22)
 
 ### Bug Fixes
