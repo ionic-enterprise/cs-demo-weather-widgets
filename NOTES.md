@@ -175,21 +175,23 @@ The most important part is the `scripts` section. Keep the scripts as simple as 
 
 ```json
   "scripts": {
-    "build": "pnpm --filter @ionic-enterprise/cs-demo-weather-widgets build && pnpm run --filter=!@ionic-enterprise/cs-demo-weather-widgets build",
+    "build": "pnpm run -r build",
     "bump": "changeset version",
-    "lint": "pnpm --filter @ionic-enterprise/cs-demo-weather-widgets lint",
+    "lint": "pnpm run -r lint",
     "prepare": "husky install",
     "release": "pnpm lint && pnpm test && pnpm build && pnpm publish -r",
-    "test": "pnpm --filter @ionic-enterprise/cs-demo-weather-widgets test"
+    "test": "pnpm run -r test"
   },
 ```
 
-- **build**: First build the web component library. This generates code in the other packages. Then build the other packages.
+- **build**: Build the packages. `pnpm` will figure out that it needs to build the `@ionic-enterprise/cs-demo-weather-widgets` (`core`) package first.
 - **bump**: Based on the existing changesets, bump the versions of our packages and generate the CHANGELOG.md files. The result of this operation should be reviewed and either committed or rolled back.
-- **lint**: Lint the core weather widgets project.
+- **lint**: Lint any package that has a `lint` command.
 - **prepare**: Installs the git hooks (configured above)
 - **release**: Lint, test, and build. If that all succeeds, publish each package to NPM.
-- **test**: Test the core weather widgets project. All other code is generated, and as such it would be difficult to create comprehensive tests for them.
+- **test**: Test any package that has a `test` command.
+
+Many of these commands are just for convenience, allowing you to type `pnpm build` rather than `pnpm run -r build`, for example.
 
 **Note:** most of these commands will fail to do anything if you try them right now since we don't actually have any packages at this time.
 

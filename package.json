@@ -2,12 +2,12 @@
   "name": "cs-demo-weather-widgets",
   "private": true,
   "scripts": {
-    "build": "pnpm --filter @ionic-enterprise/cs-demo-weather-widgets build && pnpm run --filter=!@ionic-enterprise/cs-demo-weather-widgets build",
     "bump": "changeset version",
-    "lint": "pnpm --filter @ionic-enterprise/cs-demo-weather-widgets lint",
+    "build": "pnpm run -r build",
+    "lint": "pnpm run -r lint",
     "prepare": "husky install",
     "release": "pnpm lint && pnpm test && pnpm build && pnpm publish -r",
-    "test": "pnpm --filter @ionic-enterprise/cs-demo-weather-widgets test"
+    "test": "pnpm run -r test"
   },
   "devDependencies": {
     "@changesets/cli": "~2.22.0",

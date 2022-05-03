@@ -7,27 +7,13 @@ If you want to build your own library, here are the steps to follow:
 These instructions assume you are currently in the root of your monorepo.
 
 ```bash
+mkdir packages
 cd packages
 npm init stencil components core
 cd core
 ```
 
 This will create a directory with the name you specified (`core` in this case). This directory contains the component library code. Later we will change the published `name` of the package in the generated `package.json` file. The directory name and the package name do not have to match
-
-### Install `prettier`
-
-We have `prettier` installed at the root of the monorepo, but some editors do better if it is also installed in the project itself. As such, install it and update the `package.json` file to include the configuration.
-
-```bash
-npm i -D prettier
-```
-
-```JSON
-{
-  ...,
-  "prettier": "@ionic/prettier-config",
-}
-```
 
 ## Update the `package.json` File
 
@@ -53,7 +39,7 @@ The framework wrapper projects that we will install later will default to using 
 
 That is the only change required at this point. The rest of the configuration that you currently see in this file will be added as we create each of the Framework Wrapper packages.
 
-**Note:** you _can_ change the `namespace` if you want, though you will then need to update the `unpkg` setting as well in the `package.json` file.
+**Note:** you _can_ change the `namespace` if you want, and we _did_ do that. If you do this, you need to update the `unpkg` setting in the `package.json` file.
 
 ## Update the `.gitignore` File
 
@@ -75,7 +61,7 @@ The Stencil project is not generated with `lint` enabled by default. I like to h
 1. Install the package:
 
    ```bash
-   npm i -D @stencil/eslint-plugin
+   pnpm add -D @stencil/eslint-plugin @typescript-eslint/eslint-plugin@^4.0.0 eslint-plugin-react@^7.0.0 @typescript-eslint/parser@^4.0.0 typescript@^4.0.8 eslint@^7.0.0
    ```
 
 2. Create a `.eslintrc.json` file:
@@ -99,11 +85,35 @@ The Stencil project is not generated with `lint` enabled by default. I like to h
      },
    ```
 
-There will be warnings, but you should not have any errors.
+## Install `prettier`
+
+We have `prettier` installed at the root of the monorepo, but some editors do better if it is also installed in the project itself. As such, install it and update the `package.json` file to include the configuration.
+
+```bash
+pnpm add -D prettier
+```
+
+```JSON
+{
+  ...,
+  "prettier": "@ionic/prettier-config",
+}
+```
+
+## Test Build and Lint
+
+Back in the repository root (`cd ../../`):
+
+```bash
+pnpm i
+pnpm build
+pnpm lint
+pnpm test
+```
+
+All commands should work. There will be lint warnings. There should be no errors.
 
 ## Conclusion
-
-Go back to the root of you monorepo. The `build`, `lint`, and `test` commands should all basically work at this point. The `build` will error after the Stencil build because we don't have any other projects yet. That will be fixed as as add the projects for the Framework Wrappers. The lint command will give warnings. That is normal given the current state of `@stencil/eslint-plugin`.
 
 We will add more to this project's configuration as we add the Framework Wrappers. For now, though, this project is complete. Feel free to start building out the components.
 

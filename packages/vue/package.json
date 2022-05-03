@@ -16,7 +16,6 @@
     "build": "npm run clean && npm run compile",
     "clean": "rimraf dist && rimraf dist-transpiled",
     "compile": "npm run tsc && rollup -c",
-    "test": "echo \"Error: run tests from root\" && exit 1",
     "tsc": "tsc -p ."
   },
   "main": "./dist/index.js",
