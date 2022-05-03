@@ -4,18 +4,14 @@
   "scripts": {
     "build": "pnpm --filter @ionic-enterprise/cs-demo-weather-widgets build && pnpm run --filter=!@ionic-enterprise/cs-demo-weather-widgets build",
     "bump": "changeset version",
-    "change": "changeset",
     "lint": "pnpm --filter @ionic-enterprise/cs-demo-weather-widgets lint",
     "prepare": "husky install",
-    "preversion": "npm run lint && npm run test && npm run build",
-    "release": "lerna publish",
+    "release": "pnpm lint && pnpm test && pnpm build && pnpm publish -r",
     "test": "pnpm --filter @ionic-enterprise/cs-demo-weather-widgets test"
   },
   "devDependencies": {
     "@changesets/cli": "~2.22.0",
     "@ionic/prettier-config": "~2.0.0",
-    "conventional-changelog": "~3.1.25",
-    "conventional-changelog-cli": "~2.2.2",
     "husky": "~7.0.4",
     "prettier": "~2.6.2",
     "pretty-quick": "~3.1.3"
