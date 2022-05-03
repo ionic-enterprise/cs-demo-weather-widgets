@@ -10,9 +10,9 @@ The first thing we need to do is generate the project.
 
 ```bash
 cd packages
-npx -p @angular/cli ng new angular --no-create-application
+pnpm --package=@angular/cli dlx ng new angular --no-create-application
 cd angular
-npx -p @angular/cli ng generate library component-library
+pnpm --package=@angular/cli dlx ng generate library component-library
 ```
 
 ## Adjust the Configuration
@@ -34,10 +34,11 @@ The existing `package.json` file is not appropriate for publishing a library to 
 
 1. Move all of the existing `dependencies` to be included in the `devDependencies`.
 1. Remove the `private: true` to allow the package to be published.
+1. Remove the `test` script or rename it to `test:dev` (all of this code is generated)
 1. Update the `name` to match the scope and name that these wrappers will be published under (for example: `@ionic-enterprise/cs-demo-weather-widgets-angular`).
 1. Add the `description`, `license`, `homepage`, `repository`, `module`, `types`, `files`, `peerDependencies`, and `publishConfig` values (see bellow for a sample).
 1. Add our Stencil project as the sole dependency. Run a command such as the following (adjust for your own package names):
-   `npx lerna add @ionic-enterprise/cs-demo-weather-widgets --scope=@ionic-enterprise/cs-demo-weather-widgets-angular`
+   `pnpm add @ionic-enterprise/cs-demo-weather-widgets`
 
 When you are finished, your `package.json` file should look something like this:
 
@@ -56,8 +57,7 @@ When you are finished, your `package.json` file should look something like this:
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "watch": "ng build --watch --configuration development"
   },
   "module": "dist/",
   "types": "dist/component-library.d.ts",
@@ -65,7 +65,7 @@ When you are finished, your `package.json` file should look something like this:
     "dist/"
   ],
   "dependencies": {
-    "@ionic-enterprise/cs-demo-weather-widgets": "^0.0.0"
+    "@ionic-enterprise/cs-demo-weather-widgets": "workspace:~0.0.0"
   },
   "devDependencies": {
     ...
@@ -89,7 +89,7 @@ Switch back to the Stencil project and add the Angular Framework Wrapper. As alw
 
 ```bash
 cd ../core
-npm i -D @stencil/angular-output-target
+pnpm add -D @stencil/angular-output-target
 ```
 
 The Angular Framework Wrapper is configured in a similar manner to the other output targets. We will use a set of options that allow us to export the output of the `dist-custom-elements` build. That is, we are publishing the ES6 modules. See the [framework wrapper documentation](https://github.com/ionic-team/stencil-ds-output-targets/blob/main/packages/angular-output-target/README.md) for a full set of options.
