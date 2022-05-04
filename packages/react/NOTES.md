@@ -11,7 +11,7 @@ cd packages
 git clone https://github.com/ionic-team/stencil-ds-react-template react
 cd react
 rm -rf .git
-npm i
+pnpm i
 ```
 
 ## Update the `package.json` File
@@ -21,8 +21,8 @@ The `package.json` file needs a few minor updates:
 1. Update the `name` to match the scope and name that these wrappers will be published under (for example: `@ionic-enterprise/cs-demo-weather-widgets-react`).
 1. Remove the `private: true` to allow the package to be published.
 1. Update or add the `description`, `license`, `homepage`, `repository` `version`, and `publishConfig` values (see bellow for a sample).
-1. `npm i -D @rollup/plugin-node-resolve rollup-plugin-sourcemaps rollup rimraf` (we will use this later, it is just easiest to install it now)
-1. Add our Stencil project as the sole dependency. Run a command such as the following (adjust for your own package names): `npx lerna add @ionic-enterprise/cs-demo-weather-widgets --scope=@ionic-enterprise/cs-demo-weather-widgets-react`
+1. `pnpm add -D @rollup/plugin-node-resolve rollup-plugin-sourcemaps rollup rimraf` (we will use this later, it is just easiest to install it now)
+1. Add our Stencil project as the sole dependency. Run a command such as the following (adjust for your own package names): `pnpm add @ionic-enterprise/cs-demo-weather-widgets`
 
 ```JSON
 {
@@ -49,7 +49,7 @@ The `package.json` file needs a few minor updates:
     ...
   },
   "dependencies": {
-    "@ionic-enterprise/cs-demo-weather-widgets": "^0.0.0"
+    "@ionic-enterprise/cs-demo-weather-widgets": "workspace:~0.0.0"
   },
   "peerDependencies": {
     ...
@@ -69,7 +69,7 @@ Switch back to the Stencil project and add the React Framework Wrapper. As alway
 
 ```bash
 cd ../core
-npm i -D @stencil/react-output-target
+pnpm add -D @stencil/react-output-target
 ```
 
 The React Framework Wrapper is configured in a similar manner to the other output targets. We will use a set of options that allow us to export the output of the `dist-custom-elements` build. That is, we are publishing the ES6 modules. See the [framework wrapper documentation](https://github.com/ionic-team/stencil-ds-output-targets/blob/main/packages/react-output-target/README.md) for a full set of options.
@@ -101,7 +101,7 @@ Run a build from the `packages/core` directory. It should succeed, and the files
 
 If you go back to the `react` framework wrapper directory and perform a `npm run build` you will see that the `dist/index.js.map` file references the source code. We do not want to have to distribute the source. Instead, let's incorporate Rollup and use it to embed the source into the sourcemaps.  We need an intermediate build step. The TypeScript build will need to output the bundles to a temporary location. We will use `dist-transpiled/` for this. However, we would still like the types to be output to `dist/`. Update the `tsconfig.json` file. Change the `outDir` to `dist-transpiled`. Add a `declarationDir` with the value of `dist/types`.
 
-```JSON
+```json
 {
   "compilerOptions": {
     ...
@@ -121,7 +121,7 @@ We need to modify the build scripts in `package.json` accordingly.
 
 Here is an example that puts that all together:
 
-```JSON
+```json
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "rimraf dist && rimraf dist-transpiled",
@@ -172,6 +172,6 @@ export default {
 };
 ```
 
-Try a `npm run build` and the React output target should build properly. Try a build from the root of the monorepo and everything should rebuild correctly.
+Try a `pnpm build` and the React output target should build properly. Try a build from the root of the monorepo and everything should rebuild correctly.
 
 Happy Coding!! 🤓
