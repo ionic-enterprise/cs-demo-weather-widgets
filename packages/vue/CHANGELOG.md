@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.0.0
+
+### Patch Changes
+
+- Updated dependencies [1d08abd]
+- Updated dependencies [1973ab8]
+  - @ionic-enterprise/cs-demo-weather-widgets@2.0.0
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
@@ -7,24 +15,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @ionic-enterprise/cs-demo-weather-widgets-vue
 
-
-
-
-
 ## [1.2.1](https://github.com/ionic-enterprise/cs-demo-weather-widgets/compare/v1.2.0...v1.2.1) (2022-04-22)
-
 
 ### Bug Fixes
 
-* **vue:** make publish public ([49716e8](https://github.com/ionic-enterprise/cs-demo-weather-widgets/commit/49716e859ecfba8bba463184a75f45720ba34e2d))
-
-
-
-
+- **vue:** make publish public ([49716e8](https://github.com/ionic-enterprise/cs-demo-weather-widgets/commit/49716e859ecfba8bba463184a75f45720ba34e2d))
 
 # [1.2.0](https://github.com/ionic-enterprise/cs-demo-weather-widgets/compare/v1.1.1...v1.2.0) (2022-04-22)
 
-
 ### Features
 
-* **vue:** add the vue framework wrapper ([d058525](https://github.com/ionic-enterprise/cs-demo-weather-widgets/commit/d05852507be466dfb4829a183742aecc56d54992))
+- **vue:** add the vue framework wrapper ([d058525](https://github.com/ionic-enterprise/cs-demo-weather-widgets/commit/d05852507be466dfb4829a183742aecc56d54992))

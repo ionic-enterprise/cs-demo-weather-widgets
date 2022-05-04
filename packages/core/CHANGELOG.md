@@ -1,5 +1,15 @@
 # Change Log
 
+## 2.0.0
+
+### Major Changes
+
+- 1d08abd: Convert off of Lerna to pnpm with changesets
+
+  This was done because Lerna has been marked as no longer being supported.
+
+- 1973ab8: Update the README.md doc for the new pnpm based procedures. Split the notes off into a NOTES.md file.
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 

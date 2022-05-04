@@ -44,7 +44,7 @@ The publishing process involves three main steps: bump the versions, tag the bum
   - `pnpm bump`
   - `git commit -m "chore(): upgrade the version to x.y.z"`
 - Tag the bump commit
-  - `git -a v2.0.0 -m "release v2.0.0"`
+  - `git tag -a v2.0.0 -m "release v2.0.0"`
   - `git push --tags`
 - Publish: `pnpm release`
 
