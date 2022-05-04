@@ -4,62 +4,62 @@ Web components are very well supported by Vue. That said, it is still beneficial
 
 ## Create the Project
 
-### Create `projects/vue` in the Monorepo
+### Create `projects/vue`
 
-Use Lerna's `create` to begin building out the Vue Framework Wrapper project.
+The first thing we need to do is create the Vue Framework Wrapper package folder in our monorepo. The commands here assume you are starting from the root of your monorepo.
 
 ```bash
-npx lerna create vue
+cd packages
+mkdir vue
+cd vue
 ```
 
-This will ask for some details about the project being created. Here is an example of how to answer. Don't worry too much at this point about the details since we can easily change them later if needed:
+### Add the `package.json` File
 
-```
-$ npx lerna create vue
-lerna notice cli v4.0.0
-lerna WARN ENOREMOTE No git remote found, skipping repository property
-package name: (vue) @ionic-enterprise/cs-demo-weather-widgets-vue
-version: (0.0.0)
-description: Vue specific proxies for @ionic-enterprise/cs-demo-weather-widgets
-keywords:
-homepage:
-license: (ISC) MIT
-entry point: (lib/vue.js) dist/index.js
-git repository:
-About to write to /Users/ken/Projects/Home/test-comp-mono/packages/vue/package.json:
+Create a `packages.json` file in `packages/vue` with the following default content:
 
+```json
 {
   "name": "@ionic-enterprise/cs-demo-weather-widgets-vue",
   "version": "0.0.0",
   "description": "Vue specific proxies for @ionic-enterprise/cs-demo-weather-widgets",
-  "author": "Ken Sodemann <ken@ionic.io>",
-  "homepage": "",
+  "author": "Ionic Customer Success Team <support@ionic.io>",
+  "homepage": "https://github.com/ionic-enterprise/cs-demo-weather-widgets",
   "license": "MIT",
-  "main": "dist/index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-enterprise/cs-demo-weather-widgets.git"
   },
-  "files": [
-    "lib"
-  ],
+  "bugs": {
+    "url": "https://github.com/ionic-enterprise/cs-demo-weather-widgets/issues"
+  },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "npm run clean && npm run compile",
+    "clean": "rimraf dist && rimraf dist-transpiled",
+    "compile": "npm run tsc && rollup -c",
+    "tsc": "tsc -p ."
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }
-
-
-Is this OK? (yes)
-lerna success create New package @ionic-enterprise/cs-demo-weather-widgets-vue created at ./packages/vue
 ```
+
+Change applicable items such as the `name`, `description`, `author`, `homepage` etc to match your project.
 
 ### Install the Vue Framework Wrappers
 
 The Framework Wrapper needs to be installed in the Stencil component library project. The wrapper is automatically run as part of the Stencil build process. It generates the proxy code within the `packages/vue` project.
 
 ```bash
-cd packages/core
-npm i -D @stencil/vue-output-target
+cd ../core
+pnpm add -D @stencil/vue-output-target
 ```
 
 The Vue Framework Wrapper is configured in a similar manner to the other output targets. We will use a set of options that allow us to export the output of the `dist-custom-elements` build. That is, we are publishing the ES6 modules. See the [framework wrapper documentation](https://github.com/ionic-team/stencil-ds-output-targets/blob/main/packages/vue-output-target/README.md) for a full set of options.
@@ -85,6 +85,8 @@ export const config: Config = {
 }
 ```
 
+Perform  build in the `packages/core` directory using `pnpm build`.
+
 ### Build the Vue Project
 
 Go to the `packages/vue` directory. We need to create the build process for our proxies.
@@ -99,14 +101,12 @@ The Vue Framework Wrapper generated a `src/components.ts` file in this project. 
 export * from './components';
 ```
 
-Remove the generated code, install the `devDependencies`, and add the dependency for our Stencil web component library.
+We need to install some `devDependencies` and add the dependency for our Stencil web component library.
 
 ```bash
-rm -rf __tests__ lib
-npm i -D vue typescript rimraf @rollup/plugin-node-resolve rollup rollup-plugin-sourcemaps
-npx lerna add @ionic-enterprise/cs-demo-weather-widgets --scope=@ionic-enterprise/cs-demo-weather-widgets-vue
+pnpm add -D vue typescript rimraf @rollup/plugin-node-resolve rollup rollup-plugin-sourcemaps
+pnpm add @ionic-enterprise/cs-demo-weather-widgets
 ```
-
 
 Create a handful of configuration files.
 
@@ -184,24 +184,6 @@ export default {
 ```
 dist/
 dist-transpiled/
-```
-
-Update the `scripts` section of the `package.json` file. The `main`, `module`, `types`, and `files` also need to be updated.
-
-```json
-  "scripts": {
-    "build": "npm run clean && npm run compile",
-    "clean": "rimraf dist && rimraf dist-transpiled",
-    "compile": "npm run tsc && rollup -c",
-    "test": "echo \"Error: run tests from root\" && exit 1",
-    "tsc": "tsc -p ."
-  },
-  "main": "./dist/index.js",
-  "module": "./dist/index.esm.js",
-  "types": "./dist/types/index.d.ts",
-  "files": [
-    "dist/"
-  ],
 ```
 
 The package should now build successfully.
