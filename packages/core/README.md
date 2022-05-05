@@ -5,7 +5,7 @@
 This is a sample custom element library that contains some simple weather related elements. This library contains the following custom elements:
 
 - Simple
-  - **csdemo-temperature** - takes a temperature in Kelvin and displays the value in either Celcius or Fahrenheit
+  - **csdemo-temperature** - takes a temperature in Kelvin and displays the value in either Celsius or Fahrenheit
   - **csdemo-uv-index** - takes a UV Index value and displays the value with a description and color coding
   - **csdemo-condition** - given a mapping of condition types to image URLs and a condition code, determines which code to use and displays the image with a label
 - Compound
@@ -13,19 +13,17 @@ This is a sample custom element library that contains some simple weather relate
 
 ## Usage
 
-This library is _not_ currently published to NPM, so the easiest way to include it is to:
+If you are using Angular, React, or Vue, please see the framework specific version of this package instead:
 
-1. `npm run build`
-1. `npm link`
-1. then in any consuming project - `npm link csdemo-weather-widgets`
+- [Angular](https://www.npmjs.com/package/@ionic-enterprise/cs-demo-weather-widgets-angular)
+- [React](https://www.npmjs.com/package/@ionic-enterprise/cs-demo-weather-widgets-react)
+- [Vue](https://www.npmjs.com/package/@ionic-enterprise/cs-demo-weather-widgets-vue)
 
-The Stencil documentation site has an excellent [Framework Integration Guide](https://stenciljs.com/docs/framework-integration). Following that to guide to integrate the library with your project.
-
-**Note:** if you are using Vue, the prefix used is `csdemo` so the `ignoredElements` line is `Vue.config.ignoredElements = [/csdemo-\w*/];`.
+If you are using another framework, or no framework at all, please refer to the [Stencil integration docs](https://stenciljs.com/docs/overview) for hints on how to directly consume Stencil built web components.
 
 ### Images
 
-This library does not include its own images. In order to inform the library how to get the images to use, you need to set up a map that specifies the image file to use for each of the weather conditions.
+This library does not include its own images. In order to inform the library how to get the images to use, you need to set up a mapping object that specifies the image file to use for each of the weather conditions.
 
 Here is an example:
 
