@@ -1,4 +1,4 @@
-# Weather Widgets Angular
+# Weather Widgets - Angular
 
 This is a sample custom element library that contains some simple weather related web components. This library contains the following components:
 
@@ -43,15 +43,13 @@ import { ForecastPage } from './forecast.page';
 export class ForecastPageModule {}
 ```
 
-
-
 ### Components
 
 Any component that take a `condition` assumes that the condition is one of the [condition codes](https://openweathermap.org/weather-conditions) used by [OpenWeatherMap.org](https://openweathermap.org).
 
 #### `csdemo-temperature`
 
-Displays the `temperature`, given in Kelvin, in the given `scale` (C or F).
+Displays the `temperature`, supplied in Kelvin, in the specified `scale` (C or F).
 
 ```html
 <csdemo-temperature scale="F" temperature="297"></csdemo-temperature>
@@ -67,7 +65,7 @@ Displays the current condition in both text and icon form.
 
 #### `csdemo-daily-forecast`
 
-Displays the forcast for a given day.
+Displays the forecast for a given day.
 
 ```html
 <csdemo-daily-forecast scale="F" [forecasts]="forecastData" [iconPaths]="iconMap"></csdemo-daily-forecast>
@@ -96,7 +94,6 @@ Displays the UV index along with a risk level, in a color appropriate for the le
 ```
 
 ### Image Handling
-
 
 This library does not include its own images. In order to inform the library how to get the images to use, you need to set up a mapping object that specifies the image file to use for each of the weather conditions.
 

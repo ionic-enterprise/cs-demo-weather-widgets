@@ -65,7 +65,7 @@ Displays the current condition in both text and icon form.
 
 #### `csdemo-daily-forecast`
 
-Displays the forcast for a given day.
+Displays the forecast for a given day.
 
 ```html
 <csdemo-daily-forecast scale="F" [forecasts]="forecastData" [iconPaths]="iconMap"></csdemo-daily-forecast>
