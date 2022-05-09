@@ -22,7 +22,7 @@ This library does not include its own images. In order to inform the library how
 For example:
 
 ```typescript
-  const icons: IconMap = {
+  const icons = {
     sunny: 'assets/images/sunny.png',
     cloudy: 'assets/images/cloudy.png',
     lightRain: 'assets/images/light-rain.png',
@@ -35,7 +35,7 @@ For example:
   };
 ```
 
-### `csdemo-temperature`
+### `CsdemoTemperature`
 
 Displays the `temperature`, supplied in Kelvin, in the specified `scale` (C or F).
 
@@ -56,7 +56,7 @@ const SomePage: React.FC = () => {
 };
 ```
 
-### `csdemo-condition`
+### `CsdemoCondition`
 
 Displays the current condition in both text and icon form. The condition is one of the [condition codes](https://openweathermap.org/weather-conditions) used by [OpenWeatherMap.org](https://openweathermap.org). The `iconPaths` value is [described above](#handling-icons)
 
@@ -73,12 +73,12 @@ const SomePage: React.FC = () => {
 };
 ```
 
-#### `csdemo-uv-index`
+#### `CsdemoUvIndex`
 
 Displays the UV index along with a risk level, in a color appropriate for the level of risk.
 
 ```tsx
-import { CsdemoCondition } from '@ionic-enterprise/cs-demo-weather-widgets-react';
+import { CsdemoUvIndex } from '@ionic-enterprise/cs-demo-weather-widgets-react';
 
 const SomePage: React.FC = () => {
   return (
@@ -87,13 +87,13 @@ const SomePage: React.FC = () => {
 };
 ```
 
-#### `csdemo-daily-forecast`
+#### `CsdemoDailyForecast`
 
 Displays the forecast for a given day.
 
 ```tsx
 import { useState } from 'react';
-import { CsdemoTemperature } from '@ionic-enterprise/cs-demo-weather-widgets-react';
+import { CsdemoDailyForecast } from '@ionic-enterprise/cs-demo-weather-widgets-react';
 
 const SomePage: React.FC = () => {
   const [scale, setScale] = useState('F');
