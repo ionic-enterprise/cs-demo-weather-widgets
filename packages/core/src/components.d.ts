@@ -9,7 +9,6 @@ import { ConditionIconPaths } from "./models/condition-icon-paths";
 import { Forecast } from "./models/forecast";
 export namespace Components {
     interface CsdemoCondition {
-        "bgColor": string;
         "condition": number;
         "iconPaths": ConditionIconPaths;
     }
@@ -60,7 +59,6 @@ declare global {
 }
 declare namespace LocalJSX {
     interface CsdemoCondition {
-        "bgColor"?: string;
         "condition"?: number;
         "iconPaths"?: ConditionIconPaths;
     }

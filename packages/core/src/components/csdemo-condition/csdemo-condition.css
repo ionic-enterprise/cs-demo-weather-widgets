@@ -12,5 +12,4 @@
 .condition-label {
   font-size: var(--csdemo-condition-label-font-size);
   font-weight: var(--csdemo-condition-label-font-weight);
-  color: var(--csdemo-font-color, #000);
 }

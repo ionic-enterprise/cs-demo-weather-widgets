@@ -10,12 +10,7 @@ import { WeatherCondition } from '../../services/weather-condition/weather-condi
 export class csdemoCondition {
   @Prop() iconPaths: ConditionIconPaths;
   @Prop() condition: number;
-  @Prop() bgColor: string;
   private weatherCondition: WeatherCondition;
-
-  getBackgroundStyle() {
-    return this.bgColor && this.bgColor !== 'white' ? { background: this.bgColor, '--csdemo-font-color': 'white' } : {};
-  }
 
   constructor() {
     this.weatherCondition = new WeatherCondition();
@@ -25,7 +20,7 @@ export class csdemoCondition {
     const url = this.weatherCondition.imageUrl(this.condition, this.iconPaths);
     const label = this.weatherCondition.description(this.condition);
     return (
-      <div class="condition-container" style={this.getBackgroundStyle()}>
+      <div class="condition-container">
         <div class="condition-image">{url && <img alt={label} src={url} />}</div>
         <div class="condition-label">{label}</div>
       </div>

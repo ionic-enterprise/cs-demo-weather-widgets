@@ -7,7 +7,6 @@
 
 | Property    | Attribute   | Description | Type                 | Default     |
 | ----------- | ----------- | ----------- | -------------------- | ----------- |
-| `bgColor`   | `bg-color`  |             | `string`             | `undefined` |
 | `condition` | `condition` |             | `number`             | `undefined` |
 | `iconPaths` | --          |             | `ConditionIconPaths` | `undefined` |
 

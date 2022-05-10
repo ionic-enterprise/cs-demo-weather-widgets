@@ -15,13 +15,13 @@ export declare interface CsdemoCondition extends Components.CsdemoCondition {}
 
 @ProxyCmp({
   defineCustomElementFn: defineCsdemoCondition,
-  inputs: ['bgColor', 'condition', 'iconPaths']
+  inputs: ['condition', 'iconPaths']
 })
 @Component({
   selector: 'csdemo-condition',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['bgColor', 'condition', 'iconPaths']
+  inputs: ['condition', 'iconPaths']
 })
 export class CsdemoCondition {
   protected el: HTMLElement;
