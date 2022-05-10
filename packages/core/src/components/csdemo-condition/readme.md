@@ -9,6 +9,8 @@
 | ----------- | ----------- | ----------- | -------------------- | ----------- |
 | `condition` | `condition` |             | `number`             | `undefined` |
 | `iconPaths` | --          |             | `ConditionIconPaths` | `undefined` |
+| `noIcon`    | `no-icon`   |             | `boolean`            | `undefined` |
+| `noLabel`   | `no-label`  |             | `boolean`            | `undefined` |
 
 
 ## Dependencies

@@ -60,7 +60,7 @@ Displays the `temperature`, supplied in Kelvin, in the specified `scale` (C or F
 Displays the current condition in both text and icon form.
 
 ```html
-<csdemo-condition [condition]="200" [iconPaths]="iconMap"></csdemo-condition>
+<csdemo-condition [condition]="200"></csdemo-condition>
 ```
 
 #### `csdemo-daily-forecast`
@@ -68,7 +68,7 @@ Displays the current condition in both text and icon form.
 Displays the forecast for a given day.
 
 ```html
-<csdemo-daily-forecast scale="F" [forecasts]="forecastData" [iconPaths]="iconMap"></csdemo-daily-forecast>
+<csdemo-daily-forecast scale="F" [forecasts]="forecastData"></csdemo-daily-forecast>
 ```
 
 The forecast property is an array of forecast data for a single day in the following format:
@@ -95,28 +95,49 @@ Displays the UV index along with a risk level, in a color appropriate for the le
 
 ### Image Handling
 
-This library does not include its own images. In order to inform the library how to get the images to use, you need to set up a mapping object that specifies the image file to use for each of the weather conditions.
+This library includes a set of images under `node_modules/@ionic-enterprise/cs-demo-weather-widgets/dist/images`. If you copy all of these images to `src/assets/images` they will be automatically loaded by the components that need them.
 
-In Angular applications, it is often useful to attach this mapping object to the `environment` object as such:
+You are also free to use your own images, copy them to a different location, and/or name some of the images differently.
+
+If you use a different location or name, you will need to specify a mapping that the components can use.  In Angular applications, it is often useful to attach this mapping object to the `environment` object as such:
 
 ```TypeScript
 export const environment = {
   production: false,
   icons: {
-    sunny: 'assets/images/sunny.png',
-    cloudy: 'assets/images/cloudy.png',
-    lightRain: 'assets/images/light-rain.png',
-    shower: 'assets/images/shower.png',
+    sunny: 'alt/location/sunny.png',
+    cloudy: 'alt/location/cloudy.png',
+    lightRain: 'alt/location/light-rain.png',
+    shower: 'alt/location/shower.png',
+    sunnyThunderStorm: 'alt/location/sunny-tstorm.png',
+    thunderStorm: 'alt/location/tstorm.png',
+    fog: 'alt/location/fog.png',
+    snow: 'alt/location/snow.png',
+    unknown: 'alt/location/unknown.png',
+  },
+};
+```
+
+You can also specify a partial list if only only a couple of icons are different or have different names:
+
+```TypeScript
+export const environment = {
+  production: false,
+  icons: {
     sunnyThunderStorm: 'assets/images/partial-tstorm.png',
-    thunderStorm: 'assets/images/tstorm.png',
-    fog: 'assets/images/fog.png',
-    snow: 'assets/images/snow.png',
-    unknown: 'assets/images/dunno.png',
+    unknown: 'assets/images/this-is-wrong.png',
   },
 };
 ```
 
 If you have multiple environments, refactor as needed to keep your code DRY.
+
+You can pass the icons to any component that has a `iconPaths` property:
+
+```html
+<csdemo-condition [condition]="200" [iconPaths]="icons"></csdemo-condition>
+<csdemo-daily-forecast scale="F" [forecasts]="icons" [iconPaths]="iconMap"></csdemo-daily-forecast>
+```
 
 ## Conclusion
 

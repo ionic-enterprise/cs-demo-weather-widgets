@@ -39,7 +39,7 @@ export class csdemoDailyForecast {
   }
 
   private setIconUrl() {
-    this.iconUrl = this.condition && this.iconPaths && this.weatherCondition.imageUrl(this.condition, this.iconPaths);
+    this.iconUrl = this.condition && this.weatherCondition.imageUrl(this.condition, this.iconPaths);
   }
 
   private dateString(): string {
@@ -57,7 +57,7 @@ export class csdemoDailyForecast {
         )}
         <div class="description">
           <div class="date">{this.dateString()}</div>
-          <csdemo-condition condition={this.condition} />
+          <csdemo-condition condition={this.condition} noIcon={true} />
           <div class="temperature-group">
             <div class="temperature-item temperature-low">
               <span class="label">Low: </span>

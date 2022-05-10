@@ -11,6 +11,8 @@ export namespace Components {
     interface CsdemoCondition {
         "condition": number;
         "iconPaths": ConditionIconPaths;
+        "noIcon": boolean;
+        "noLabel": boolean;
     }
     interface CsdemoDailyForecast {
         "forecasts": Array<Forecast>;
@@ -61,6 +63,8 @@ declare namespace LocalJSX {
     interface CsdemoCondition {
         "condition"?: number;
         "iconPaths"?: ConditionIconPaths;
+        "noIcon"?: boolean;
+        "noLabel"?: boolean;
     }
     interface CsdemoDailyForecast {
         "forecasts"?: Array<Forecast>;

@@ -1,5 +1,5 @@
-import { WeatherCondition } from './weather-condition';
 import { ConditionIconPaths } from '../../models/condition-icon-paths';
+import { WeatherCondition } from './weather-condition';
 
 describe('Weather Condition Service', () => {
   let weatherCondition: WeatherCondition;
@@ -133,81 +133,170 @@ describe('Weather Condition Service', () => {
 
   describe('image url', () => {
     let paths: ConditionIconPaths;
-    beforeEach(() => {
-      paths = {
-        sunny: './assets/images/sunny.png',
-        cloudy: './assets/images/cloudy.png',
-        lightRain: './assets/images/light-rain.png',
-        shower: './assets/images/shower.png',
-        sunnyThunderStorm: './assets/images/sunny-tstorm.png',
-        thunderStorm: './assets/images/tstorm.png',
-        fog: './assets/images/fog.png',
-        snow: './assets/images/snow.png',
-        unknown: './assets/images/unknown.png',
-      };
+    describe('overriding all paths', () => {
+      beforeEach(() => {
+        paths = {
+          sunny: './assets/override/sunny.png',
+          cloudy: './assets/override/cloudy.png',
+          lightRain: './assets/override/light-rain.png',
+          shower: './assets/override/shower.png',
+          sunnyThunderStorm: './assets/override/sunny-tstorm.png',
+          thunderStorm: './assets/override/tstorm.png',
+          fog: './assets/override/fog.png',
+          snow: './assets/override/snow.png',
+          unknown: './assets/override/unknown.png',
+        };
+      });
+
+      it('is Unknown for condition 810', () => {
+        expect(weatherCondition.imageUrl(810, paths)).toEqual(paths.unknown);
+        expect(weatherCondition.imageUrl(810, undefined)).toEqual('assets/images/unknown.png');
+      });
+
+      it('is Sunny for condition 800', () => {
+        expect(weatherCondition.imageUrl(800, paths)).toEqual(paths.sunny);
+        expect(weatherCondition.imageUrl(800, undefined)).toEqual('assets/images/sunny.png');
+      });
+
+      it('is Sunny for condition 904', () => {
+        expect(weatherCondition.imageUrl(904, paths)).toEqual(paths.sunny);
+        expect(weatherCondition.imageUrl(904, undefined)).toEqual('assets/images/sunny.png');
+      });
+
+      it('is Cloudy for 801 through 809', () => {
+        for (let x = 801; x < 810; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.cloudy);
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/cloudy.png');
+        }
+      });
+
+      it('is Rain for 300 through 399', () => {
+        for (let x = 300; x < 400; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.lightRain);
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/light-rain.png');
+        }
+      });
+
+      it('is Showers for 500 through 599', () => {
+        for (let x = 500; x < 600; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.shower);
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/shower.png');
+        }
+      });
+
+      it('is Fog for 701 through 771', () => {
+        for (let x = 701; x < 772; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.fog);
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/fog.png');
+        }
+      });
+
+      it('is Scattered Storms for 230 through 299', () => {
+        for (let x = 230; x < 300; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.sunnyThunderStorm);
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/sunny-tstorm.png');
+        }
+      });
+
+      it('is Thunderstorms for 200 through 229', () => {
+        for (let x = 200; x < 230; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.thunderStorm);
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/tstorm.png');
+        }
+      });
+
+      it('is Snow for 600 through 699', () => {
+        for (let x = 600; x < 700; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.snow);
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/snow.png');
+        }
+      });
+
+      it('is Snow for 903', () => {
+        expect(weatherCondition.imageUrl(903, paths)).toEqual(paths.snow);
+        expect(weatherCondition.imageUrl(903, undefined)).toEqual('assets/images/snow.png');
+      });
     });
 
-    it('is null when no image urls exist', () => {
-      expect(weatherCondition.imageUrl(800, null)).toEqual(null);
-      expect(weatherCondition.imageUrl(800, undefined)).toEqual(null);
-    });
+    describe('partial overridden paths', () => {
+      beforeEach(() => {
+        paths = {
+          sunny: './assets/override/sunny.png',
+          lightRain: './assets/override/light-rain.png',
+          sunnyThunderStorm: './assets/override/sunny-tstorm.png',
+          fog: './assets/override/fog.png',
+          unknown: './assets/override/unknown.png',
+        };
+      });
 
-    it('is Unknown for condition 810', () => {
-      expect(weatherCondition.imageUrl(810, paths)).toEqual(paths.unknown);
-    });
+      it('is Unknown for condition 810', () => {
+        expect(weatherCondition.imageUrl(810, paths)).toEqual(paths.unknown);
+        expect(weatherCondition.imageUrl(810, undefined)).toEqual('assets/images/unknown.png');
+      });
 
-    it('is Sunny for condition 800', () => {
-      expect(weatherCondition.imageUrl(800, paths)).toEqual(paths.sunny);
-    });
+      it('is Sunny for condition 800', () => {
+        expect(weatherCondition.imageUrl(800, paths)).toEqual(paths.sunny);
+        expect(weatherCondition.imageUrl(800, undefined)).toEqual('assets/images/sunny.png');
+      });
 
-    it('is Sunny for condition 904', () => {
-      expect(weatherCondition.imageUrl(904, paths)).toEqual(paths.sunny);
-    });
+      it('is Sunny for condition 904', () => {
+        expect(weatherCondition.imageUrl(904, paths)).toEqual(paths.sunny);
+        expect(weatherCondition.imageUrl(904, undefined)).toEqual('assets/images/sunny.png');
+      });
 
-    it('is Cloudy for 801 through 809', () => {
-      for (let x = 801; x < 810; x++) {
-        expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.cloudy);
-      }
-    });
+      it('is Cloudy for 801 through 809', () => {
+        for (let x = 801; x < 810; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual('assets/images/cloudy.png');
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/cloudy.png');
+        }
+      });
 
-    it('is Rain for 300 through 399', () => {
-      for (let x = 300; x < 400; x++) {
-        expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.lightRain);
-      }
-    });
+      it('is Rain for 300 through 399', () => {
+        for (let x = 300; x < 400; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.lightRain);
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/light-rain.png');
+        }
+      });
 
-    it('is Showers for 500 through 599', () => {
-      for (let x = 500; x < 600; x++) {
-        expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.shower);
-      }
-    });
+      it('is Showers for 500 through 599', () => {
+        for (let x = 500; x < 600; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual('assets/images/shower.png');
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/shower.png');
+        }
+      });
 
-    it('is Fog for 701 through 771', () => {
-      for (let x = 701; x < 772; x++) {
-        expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.fog);
-      }
-    });
+      it('is Fog for 701 through 771', () => {
+        for (let x = 701; x < 772; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.fog);
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/fog.png');
+        }
+      });
 
-    it('is Scattered Storms for 230 through 299', () => {
-      for (let x = 230; x < 300; x++) {
-        expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.sunnyThunderStorm);
-      }
-    });
+      it('is Scattered Storms for 230 through 299', () => {
+        for (let x = 230; x < 300; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.sunnyThunderStorm);
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/sunny-tstorm.png');
+        }
+      });
 
-    it('is Thunderstorms for 200 through 229', () => {
-      for (let x = 200; x < 230; x++) {
-        expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.thunderStorm);
-      }
-    });
+      it('is Thunderstorms for 200 through 229', () => {
+        for (let x = 200; x < 230; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual('assets/images/tstorm.png');
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/tstorm.png');
+        }
+      });
 
-    it('is Snow for 600 through 699', () => {
-      for (let x = 600; x < 700; x++) {
-        expect(weatherCondition.imageUrl(x, paths)).toEqual(paths.snow);
-      }
-    });
+      it('is Snow for 600 through 699', () => {
+        for (let x = 600; x < 700; x++) {
+          expect(weatherCondition.imageUrl(x, paths)).toEqual('assets/images/snow.png');
+          expect(weatherCondition.imageUrl(x, undefined)).toEqual('assets/images/snow.png');
+        }
+      });
 
-    it('is Snow for 903', () => {
-      expect(weatherCondition.imageUrl(903, paths)).toEqual(paths.snow);
+      it('is Snow for 903', () => {
+        expect(weatherCondition.imageUrl(903, paths)).toEqual('assets/images/snow.png');
+        expect(weatherCondition.imageUrl(903, undefined)).toEqual('assets/images/snow.png');
+      });
     });
   });
 

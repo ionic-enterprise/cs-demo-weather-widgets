@@ -9,6 +9,8 @@ import { WeatherCondition } from '../../services/weather-condition/weather-condi
 })
 export class csdemoCondition {
   @Prop() iconPaths: ConditionIconPaths;
+  @Prop() noIcon: boolean;
+  @Prop() noLabel: boolean;
   @Prop() condition: number;
   private weatherCondition: WeatherCondition;
 
@@ -17,12 +19,16 @@ export class csdemoCondition {
   }
 
   render() {
-    const url = this.weatherCondition.imageUrl(this.condition, this.iconPaths);
-    const label = this.weatherCondition.description(this.condition);
+    const url = !this.noIcon && this.weatherCondition.imageUrl(this.condition, this.iconPaths);
+    const label = !this.noLabel && this.weatherCondition.description(this.condition);
     return (
       <div class="condition-container">
-        <div class="condition-image">{url && <img alt={label} src={url} />}</div>
-        <div class="condition-label">{label}</div>
+        {url && (
+          <div class="condition-image">
+            <img alt={label} src={url} />
+          </div>
+        )}
+        {label && <div class="condition-label">{label}</div>}
       </div>
     );
   }

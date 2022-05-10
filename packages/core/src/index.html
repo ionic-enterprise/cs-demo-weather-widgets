@@ -49,6 +49,8 @@
         <csdemo-condition condition="800"></csdemo-condition>
         <csdemo-condition condition="801"></csdemo-condition>
         <csdemo-condition condition="404"></csdemo-condition>
+        <csdemo-condition condition="701" no-icon="true"></csdemo-condition>
+        <csdemo-condition condition="500" no-label="true"></csdemo-condition>
       </div>
       <div class="comp-group">
         <h2>Daily Forecast</h2>
@@ -62,17 +64,6 @@
       </div>
     </div>
     <script type="text/javascript">
-      const paths = {
-        sunny: './assets/images/sunny.png',
-        cloudy: './assets/images/cloudy.png',
-        lightRain: './assets/images/light-rain.png',
-        shower: './assets/images/shower.png',
-        sunnyThunderStorm: './assets/images/sunny-tstorm.png',
-        thunderStorm: './assets/images/tstorm.png',
-        fog: './assets/images/fog.png',
-        snow: './assets/images/snow.png',
-        unknown: './assets/images/unknown.png',
-      };
       const sampleForecasts = [
         {
           condition: 800,
@@ -85,17 +76,11 @@
           temperature: 291.483,
         },
       ];
-      const conditions = document.querySelectorAll('csdemo-condition, csdemo-daily-forecast');
       const forecasts = document.querySelectorAll('csdemo-daily-forecast');
       forecasts.forEach((elem, key, parent) => {
         console.log('forecast', elem, key);
-        elem.iconPaths = paths;
         elem.forecasts = sampleForecasts;
         elem.scale = 'F';
-      });
-      conditions.forEach((elem, key, parent) => {
-        console.log('condition', elem, key);
-        elem.iconPaths = paths;
       });
     </script>
   </body>

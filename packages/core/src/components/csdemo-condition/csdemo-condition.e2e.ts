@@ -11,15 +11,27 @@ describe('csdemo-condition', () => {
     expect(label.textContent).toEqual('Unknown');
   });
 
-  it('does not render an image if there is no image map', async () => {
+  it('does not render an icon if noIcon is true', async () => {
     const page = await newE2EPage();
 
     await page.setContent('<csdemo-condition></csdemo-condition>');
     const element = await page.find('csdemo-condition');
 
-    element.setProperty('condition', 200);
+    element.setProperty('noIcon', true);
     await page.waitForChanges();
-    const img = await page.find('csdemo-condition >>> img');
+    const img = await page.find('csdemo-condition >>> .condition-image');
+    expect(img).toBeFalsy();
+  });
+
+  it('does not render a condition label if noLabel is true', async () => {
+    const page = await newE2EPage();
+
+    await page.setContent('<csdemo-condition></csdemo-condition>');
+    const element = await page.find('csdemo-condition');
+
+    element.setProperty('noLabel', true);
+    await page.waitForChanges();
+    const img = await page.find('csdemo-condition >>> .condition-label');
     expect(img).toBeFalsy();
   });
 
@@ -116,7 +128,7 @@ describe('csdemo-condition', () => {
     expect(img.getAttribute('src')).toEqual(paths.sunny);
   });
 
-  it('renders the correct icon for the condition', async () => {
+  it('renders the correct text for the condition', async () => {
     const page = await newE2EPage();
 
     await page.setContent('<csdemo-condition></csdemo-condition>');

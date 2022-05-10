@@ -11,6 +11,18 @@ export class WeatherCondition {
   private thunderStorm = 60;
   private snow = 70;
 
+  private defaultIconPaths = {
+    sunny: 'assets/images/sunny.png',
+    cloudy: 'assets/images/cloudy.png',
+    lightRain: 'assets/images/light-rain.png',
+    shower: 'assets/images/shower.png',
+    sunnyThunderStorm: 'assets/images/sunny-tstorm.png',
+    thunderStorm: 'assets/images/tstorm.png',
+    fog: 'assets/images/fog.png',
+    snow: 'assets/images/snow.png',
+    unknown: 'assets/images/unknown.png',
+  };
+
   rank(condition: number): number {
     if (condition >= 200 && condition < 230) {
       return this.thunderStorm;
@@ -71,11 +83,8 @@ export class WeatherCondition {
     }
   }
 
-  imageUrl(condition: number, paths: ConditionIconPaths): string {
-    if (!paths) {
-      return null;
-    }
-
+  imageUrl(condition: number, overridePaths: ConditionIconPaths): string {
+    const paths = { ...this.defaultIconPaths, ...overridePaths };
     switch (this.rank(condition)) {
       case this.sunny:
         return paths.sunny;

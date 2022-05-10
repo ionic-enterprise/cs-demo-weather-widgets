@@ -17,22 +17,40 @@ npm i @ionic-enterprise/cs-demo-weather-widgets-vue
 
 ### Handling Icons
 
-This library does not include its own images. In order to inform the library how to get the images to use, you need to set up a mapping object that specifies the image file to use for each of the weather conditions.
+This library includes a set of images under `node_modules/@ionic-enterprise/cs-demo-weather-widgets/dist/images`. If you copy all of these images to `public/assets/images` they will be automatically loaded by the components that need them.
 
-For example:
+You are also free to use your own images, copy them to a different location, and/or name some of the images differently.
+
+If you use a different location or name, you need to let the components know the proper paths or names through a mapping. For example:
 
 ```typescript
   const icons = {
-    sunny: 'assets/images/sunny.png',
-    cloudy: 'assets/images/cloudy.png',
-    lightRain: 'assets/images/light-rain.png',
-    shower: 'assets/images/shower.png',
+    sunny: 'alt-location/images/sunny.png',
+    cloudy: 'alt-location/images/cloudy.png',
+    lightRain: 'alt-location/images/light-rain.png',
+    shower: 'alt-location/images/shower.png',
+    sunnyThunderStorm: 'alt-location/images/sunny-tstorm.png',
+    thunderStorm: 'alt-location/images/tstorm.png',
+    fog: 'alt-location/images/fog.png',
+    snow: 'alt-location/images/snow.png',
+    unknown: 'alt-location/images/unknown.png',
+  };
+```
+
+You can also use a partial mapping if only a couple of names have changed:
+
+```typescript
+  const icons = {
     sunnyThunderStorm: 'assets/images/partial-tstorm.png',
-    thunderStorm: 'assets/images/tstorm.png',
-    fog: 'assets/images/fog.png',
-    snow: 'assets/images/snow.png',
     unknown: 'assets/images/dunno.png',
   };
+```
+
+The overrides can be specified on any component that has a `iconPaths` property:
+
+```html
+  <csdemo-condition :condition="condition" :iconPaths="icons"></csdemo-condition>
+  <csdemo-daily-forecast :scale="scale" :forecasts="forecasts" :iconPaths="icons"></csdemo-daily-forecast>
 ```
 
 ### `csdemo-temperature`
@@ -71,14 +89,11 @@ export default defineComponent({
 
 ### `csdemo-condition`
 
-Displays the current condition in both text and icon form. The condition is one of the [condition codes](https://openweathermap.org/weather-conditions) used by [OpenWeatherMap.org](https://openweathermap.org). The `iconPaths` value is [described above](#handling-icons)
+Displays the current condition in both text and icon form. The condition is one of the [condition codes](https://openweathermap.org/weather-conditions) used by [OpenWeatherMap.org](https://openweathermap.org).
 
 ```html
 <template>
-  <csdemo-condition
-    :condition="condition"
-    :iconPaths="icons"
-  ></csdemo-condition>
+  <csdemo-condition :condition="condition"></csdemo-condition>
 </template>
 
 <script lang="ts">
@@ -90,10 +105,7 @@ export default defineComponent({
   components: { CsdemoCondition },
   setup() {
     const condition = ref(200);
-
-    const icons = { /* see above */ }
-
-    return { condition, icons };
+    return { condition };
   },
 });
 ```
@@ -128,7 +140,7 @@ Displays the forecast for a given day.
 
 ```html
 <template>
-  <csdemo-daily-forecast :scale="scale" :forecasts="forecasts" :iconPaths="icons"></csdemo-daily-forecast>
+  <csdemo-daily-forecast :scale="scale" :forecasts="forecasts"></csdemo-daily-forecast>
 </template>
 
 <script lang="ts">
@@ -141,10 +153,7 @@ export default defineComponent({
   setup() {
     const forecasts = ref([ array-of-forecasts-for-day ]);
     const scale = ref('F');
-
-    const icons = { /* see above */ }
-
-    return { forecasts, icons, scale };
+    return { forecasts, scale };
   },
 });
 ```
@@ -164,8 +173,6 @@ This data will be the weather conditions every X hours throughout the day. The c
 The temperature is specified in Kelvin.
 
 The condition is one of the [condition codes](https://openweathermap.org/weather-conditions) used by [OpenWeatherMap.org](https://openweathermap.org).
-
-The `iconPaths` value is [described above](#handling-icons)
 
 ## Conclusion
 

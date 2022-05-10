@@ -13,6 +13,8 @@ import { defineCustomElement as defineCsdemoUvIndex } from '@ionic-enterprise/cs
 
 export const CsdemoCondition = /*@__PURE__*/ defineContainer<JSX.CsdemoCondition>('csdemo-condition', defineCsdemoCondition, [
   'iconPaths',
+  'noIcon',
+  'noLabel',
   'condition'
 ]);
 

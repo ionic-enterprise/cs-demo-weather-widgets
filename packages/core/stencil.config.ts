@@ -27,6 +27,13 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      copy: [
+        {
+          src: '**/*.{jpg,png}',
+          dest: '../images',
+          warn: true,
+        },
+      ],
     },
     {
       type: 'dist-custom-elements',

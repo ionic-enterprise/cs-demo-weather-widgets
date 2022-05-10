@@ -17,22 +17,40 @@ npm i @ionic-enterprise/cs-demo-weather-widgets-react
 
 ### Handling Icons
 
-This library does not include its own images. In order to inform the library how to get the images to use, you need to set up a mapping object that specifies the image file to use for each of the weather conditions.
+This library includes a set of images under `node_modules/@ionic-enterprise/cs-demo-weather-widgets/dist/images`. If you copy all of these images to `public/assets/images` they will be automatically loaded by the components that need them.
 
-For example:
+You are also free to use your own images, copy them to a different location, and/or name some of the images differently.
+
+If you use a different location or name, you need to let the components know the proper paths or names through a mapping. For example:
 
 ```typescript
   const icons = {
-    sunny: 'assets/images/sunny.png',
-    cloudy: 'assets/images/cloudy.png',
-    lightRain: 'assets/images/light-rain.png',
-    shower: 'assets/images/shower.png',
+    sunny: 'alt-location/images/sunny.png',
+    cloudy: 'alt-location/images/cloudy.png',
+    lightRain: 'alt-location/images/light-rain.png',
+    shower: 'alt-location/images/shower.png',
+    sunnyThunderStorm: 'alt-location/images/sunny-tstorm.png',
+    thunderStorm: 'alt-location/images/tstorm.png',
+    fog: 'alt-location/images/fog.png',
+    snow: 'alt-location/images/snow.png',
+    unknown: 'alt-location/images/unknown.png',
+  };
+```
+
+You can also use a partial mapping if only a couple of names have changed:
+
+```typescript
+  const icons = {
     sunnyThunderStorm: 'assets/images/partial-tstorm.png',
-    thunderStorm: 'assets/images/tstorm.png',
-    fog: 'assets/images/fog.png',
-    snow: 'assets/images/snow.png',
     unknown: 'assets/images/dunno.png',
   };
+```
+
+The overrides can be specified on any component that has a `iconPaths` property:
+
+```jsx
+    <CsdemoCondition condition="200" iconPaths={icons} />
+    <CsdemoDailyForecast scale={scale} forecasts={dailyForecast} iconPaths={icons} />
 ```
 
 ### `CsdemoTemperature`
@@ -58,17 +76,14 @@ const SomePage: React.FC = () => {
 
 ### `CsdemoCondition`
 
-Displays the current condition in both text and icon form. The condition is one of the [condition codes](https://openweathermap.org/weather-conditions) used by [OpenWeatherMap.org](https://openweathermap.org). The `iconPaths` value is [described above](#handling-icons)
+Displays the current condition in both text and icon form. The condition is one of the [condition codes](https://openweathermap.org/weather-conditions) used by [OpenWeatherMap.org](https://openweathermap.org).
 
 ```tsx
 import { CsdemoCondition } from '@ionic-enterprise/cs-demo-weather-widgets-react';
 
 const SomePage: React.FC = () => {
   return (
-    <CsdemoCondition
-      condition="200"
-      icons={iconsPaths}
-    />
+    <CsdemoCondition condition="200" />
   );
 };
 ```
@@ -100,7 +115,7 @@ const SomePage: React.FC = () => {
   const dailyForecast = [ array-of-forecast-data ];
 
   return (
-    <CsdemoDailyForecast scale={scale} forecasts={dailyForecast} iconPaths={icons} />
+    <CsdemoDailyForecast scale={scale} forecasts={dailyForecast} />
   );
 };
 ```
@@ -121,8 +136,6 @@ This data will be the weather conditions every X hours throughout the day. The c
 The temperature is specified in Kelvin.
 
 The condition is one of the [condition codes](https://openweathermap.org/weather-conditions) used by [OpenWeatherMap.org](https://openweathermap.org).
-
-The `iconPaths` value is [described above](#handling-icons)
 
 ## Conclusion
 
