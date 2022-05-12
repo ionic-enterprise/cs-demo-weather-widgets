@@ -1,5 +1,18 @@
 # Change Log
 
+## 2.1.0
+
+### Minor Changes
+
+- 4a627cf: Default the icon paths if they are not provided.
+
+### Patch Changes
+
+- 2be6fef: Update the usage notes in the core README.md
+- 4350461: Remove the `--csdemo-font-color` CSS variable.
+
+  This variable was originally added to demo how to do something, and was not intended to be part of the product. Having it as part of the product has actually been shown to be harmful.
+
 ## 2.0.0
 
 ### Major Changes

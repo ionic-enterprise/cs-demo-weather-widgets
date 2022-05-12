@@ -1,5 +1,15 @@
 # Change Log
 
+## 2.1.0
+
+### Patch Changes
+
+- ef96ef3: Add usage notes in the React README.md
+- Updated dependencies [2be6fef]
+- Updated dependencies [4350461]
+- Updated dependencies [4a627cf]
+  - @ionic-enterprise/cs-demo-weather-widgets@2.1.0
+
 ## 2.0.0
 
 ### Patch Changes
