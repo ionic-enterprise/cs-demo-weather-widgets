@@ -5,12 +5,12 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type                 | Default     |
-| ----------- | ----------- | ----------- | -------------------- | ----------- |
-| `condition` | `condition` |             | `number`             | `undefined` |
-| `iconPaths` | --          |             | `ConditionIconPaths` | `undefined` |
-| `noIcon`    | `no-icon`   |             | `boolean`            | `undefined` |
-| `noLabel`   | `no-label`  |             | `boolean`            | `undefined` |
+| Property    | Attribute   | Description                                                                                                       | Type                 | Default     |
+| ----------- | ----------- | ----------------------------------------------------------------------------------------------------------------- | -------------------- | ----------- |
+| `condition` | `condition` | The overall weather condition as defined by the OpenWeatherMap API. https://openweathermap.org/weather-conditions | `number`             | `undefined` |
+| `iconPaths` | --          | Override the default icon paths. If the default icon names that we have are used and put in `assets/images`.      | `ConditionIconPaths` | `undefined` |
+| `noIcon`    | `no-icon`   | Specify that the icon / image for the condition should not be displayed                                           | `boolean`            | `undefined` |
+| `noLabel`   | `no-label`  | Specify that the label for the condition should not be displayed                                                  | `boolean`            | `undefined` |
 
 
 ## Dependencies

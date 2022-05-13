@@ -6,7 +6,15 @@ import { Component, Prop, h } from '@stencil/core';
   shadow: true,
 })
 export class csdemoTemperature {
+  /**
+   * The temperature specified in Kelvin.
+   */
   @Prop() temperature: number;
+
+  /**
+   * The temperature is specified in Kelvin.
+   * The scale specifies the units to display the temperature in, 'C' for Celsius and 'F' for Fahrenheit.
+   */
   @Prop() scale: string;
 
   private celcius(): string {

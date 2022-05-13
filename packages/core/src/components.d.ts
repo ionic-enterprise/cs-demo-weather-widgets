@@ -9,21 +9,51 @@ import { ConditionIconPaths } from "./models/condition-icon-paths";
 import { Forecast } from "./models/forecast";
 export namespace Components {
     interface CsdemoCondition {
+        /**
+          * The overall weather condition as defined by the OpenWeatherMap API. https://openweathermap.org/weather-conditions
+         */
         "condition": number;
+        /**
+          * Override the default icon paths. If the default icon names that we have are used and put in `assets/images`.
+         */
         "iconPaths": ConditionIconPaths;
+        /**
+          * Specify that the icon / image for the condition should not be displayed
+         */
         "noIcon": boolean;
+        /**
+          * Specify that the label for the condition should not be displayed
+         */
         "noLabel": boolean;
     }
     interface CsdemoDailyForecast {
+        /**
+          * An array of forecasts for the day. This allows the component to determine the overall condition to display for the day as well as the high and low temperatures.
+         */
         "forecasts": Array<Forecast>;
+        /**
+          * Override the default icon paths. If the default icon names that we have are used and put in `assets/images`.
+         */
         "iconPaths": ConditionIconPaths;
+        /**
+          * The temperature is specified in Kelvin. The scale specifies the units to display the temperature in, 'C' for Celsius and 'F' for Fahrenheit.
+         */
         "scale": string;
     }
     interface CsdemoTemperature {
+        /**
+          * The temperature is specified in Kelvin. The scale specifies the units to display the temperature in, 'C' for Celsius and 'F' for Fahrenheit.
+         */
         "scale": string;
+        /**
+          * The temperature specified in Kelvin.
+         */
         "temperature": number;
     }
     interface CsdemoUvIndex {
+        /**
+          * The UV index using the international UV index scale. https://en.wikipedia.org/wiki/Ultraviolet_index
+         */
         "uvIndex": number;
     }
 }
@@ -61,21 +91,51 @@ declare global {
 }
 declare namespace LocalJSX {
     interface CsdemoCondition {
+        /**
+          * The overall weather condition as defined by the OpenWeatherMap API. https://openweathermap.org/weather-conditions
+         */
         "condition"?: number;
+        /**
+          * Override the default icon paths. If the default icon names that we have are used and put in `assets/images`.
+         */
         "iconPaths"?: ConditionIconPaths;
+        /**
+          * Specify that the icon / image for the condition should not be displayed
+         */
         "noIcon"?: boolean;
+        /**
+          * Specify that the label for the condition should not be displayed
+         */
         "noLabel"?: boolean;
     }
     interface CsdemoDailyForecast {
+        /**
+          * An array of forecasts for the day. This allows the component to determine the overall condition to display for the day as well as the high and low temperatures.
+         */
         "forecasts"?: Array<Forecast>;
+        /**
+          * Override the default icon paths. If the default icon names that we have are used and put in `assets/images`.
+         */
         "iconPaths"?: ConditionIconPaths;
+        /**
+          * The temperature is specified in Kelvin. The scale specifies the units to display the temperature in, 'C' for Celsius and 'F' for Fahrenheit.
+         */
         "scale"?: string;
     }
     interface CsdemoTemperature {
+        /**
+          * The temperature is specified in Kelvin. The scale specifies the units to display the temperature in, 'C' for Celsius and 'F' for Fahrenheit.
+         */
         "scale"?: string;
+        /**
+          * The temperature specified in Kelvin.
+         */
         "temperature"?: number;
     }
     interface CsdemoUvIndex {
+        /**
+          * The UV index using the international UV index scale. https://en.wikipedia.org/wiki/Ultraviolet_index
+         */
         "uvIndex"?: number;
     }
     interface IntrinsicElements {

@@ -2,5 +2,13 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "extends": ["plugin:@stencil/recommended"]
+  "extends": ["plugin:@stencil/recommended"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@stencil/strict-boolean-conditions": "off"
+      }
+    }
+  ]
 }

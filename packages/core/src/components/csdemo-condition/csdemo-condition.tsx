@@ -8,10 +8,28 @@ import { WeatherCondition } from '../../services/weather-condition/weather-condi
   shadow: true,
 })
 export class csdemoCondition {
-  @Prop() iconPaths: ConditionIconPaths;
+  /**
+   * Specify that the icon / image for the condition should not be displayed
+   */
   @Prop() noIcon: boolean;
+
+  /**
+   * Specify that the label for the condition should not be displayed
+   */
   @Prop() noLabel: boolean;
+
+  /**
+   * The overall weather condition as defined by the OpenWeatherMap API.
+   * https://openweathermap.org/weather-conditions
+   */
   @Prop() condition: number;
+
+  /**
+   * Override the default icon paths. If the default icon names that we have are used
+   * and put in `assets/images`.
+   */
+  @Prop() iconPaths: ConditionIconPaths;
+
   private weatherCondition: WeatherCondition;
 
   constructor() {

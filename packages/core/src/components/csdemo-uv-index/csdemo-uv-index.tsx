@@ -6,6 +6,10 @@ import { Component, Prop, h } from '@stencil/core';
   shadow: true,
 })
 export class csdemoUVIndex {
+  /**
+   * The UV index using the international UV index scale.
+   * https://en.wikipedia.org/wiki/Ultraviolet_index
+   */
   @Prop() uvIndex: number;
 
   private mainClass(): string {

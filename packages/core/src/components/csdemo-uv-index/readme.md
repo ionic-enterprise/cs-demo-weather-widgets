@@ -5,9 +5,9 @@
 
 ## Properties
 
-| Property  | Attribute  | Description | Type     | Default     |
-| --------- | ---------- | ----------- | -------- | ----------- |
-| `uvIndex` | `uv-index` |             | `number` | `undefined` |
+| Property  | Attribute  | Description                                                                                          | Type     | Default     |
+| --------- | ---------- | ---------------------------------------------------------------------------------------------------- | -------- | ----------- |
+| `uvIndex` | `uv-index` | The UV index using the international UV index scale. https://en.wikipedia.org/wiki/Ultraviolet_index | `number` | `undefined` |
 
 
 ----------------------------------------------

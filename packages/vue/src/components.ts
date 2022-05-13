@@ -12,17 +12,17 @@ import { defineCustomElement as defineCsdemoUvIndex } from '@ionic-enterprise/cs
 
 
 export const CsdemoCondition = /*@__PURE__*/ defineContainer<JSX.CsdemoCondition>('csdemo-condition', defineCsdemoCondition, [
-  'iconPaths',
   'noIcon',
   'noLabel',
-  'condition'
+  'condition',
+  'iconPaths'
 ]);
 
 
 export const CsdemoDailyForecast = /*@__PURE__*/ defineContainer<JSX.CsdemoDailyForecast>('csdemo-daily-forecast', defineCsdemoDailyForecast, [
   'forecasts',
-  'iconPaths',
-  'scale'
+  'scale',
+  'iconPaths'
 ]);
 
 
