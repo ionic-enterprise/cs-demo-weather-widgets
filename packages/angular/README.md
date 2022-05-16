@@ -25,7 +25,34 @@ Adjust accordingly if you are using `yarn`, `pnpm`, etc.
 
 ### Module
 
-Any module that is going to use a Weather Widget component should import the `CsdemoWeatherWidgetsModule` module. For example:
+Any module that is going to use a Weather Widget component needs to import the appropriate module or modules.
+
+The most efficient strategy to use is to import the module(s) associated with the individual component(s) that will be used. For example:
+
+```typescript
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CsdemoConditionModule, CsdemoTemperatureModule } from '@ionic-enterprise/cs-demo-weather-widgets-angular';
+import { IonicModule } from '@ionic/angular';
+import { CurrentWeatherPageRoutingModule } from './current-weather-routing.module';
+import { CurrentWeatherPage } from './current-weather.page';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    CsdemoConditionModule,
+    CsdemoTemperatureModule,
+    CurrentWeatherPageRoutingModule,
+    FormsModule,
+    IonicModule,
+  ],
+  declarations: [CurrentWeatherPage],
+})
+export class CurrentWeatherPageModule {}
+```
+
+The `CsdemoWeatherWidgetsModule` module can be imported instead of individual component modules. This is more convenient, but it will also lead to larger bundle sizes.
 
 ```typescript
 import { CommonModule } from '@angular/common';
@@ -38,9 +65,9 @@ import { ForecastPage } from './forecast.page';
 
 @NgModule({
   imports: [IonicModule, CommonModule, CsdemoWeatherWidgetsModule, FormsModule, ForecastPageRoutingModule],
-  declarations: [ForecastPage],
+  declarations: [CurrentWeatherPage],
 })
-export class ForecastPageModule {}
+export class CurrentWeatherPageModule {}
 ```
 
 ### Components
