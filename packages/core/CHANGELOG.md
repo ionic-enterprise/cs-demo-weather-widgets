@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.0
+
+### Patch Changes
+
+- c1b205b: Clean up the lint errors.
+
 ## 2.1.0
 
 ### Minor Changes

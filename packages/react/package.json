@@ -1,6 +1,6 @@
 {
   "name": "@ionic-enterprise/cs-demo-weather-widgets-react",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "React specific proxies for @ionic-enterprise/cs-demo-weather-widgets",
   "author": "Ionic Customer Success <support@ionic.io>",
   "license": "MIT",
@@ -57,6 +57,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@ionic-enterprise/cs-demo-weather-widgets": "^2.1.0"
+    "@ionic-enterprise/cs-demo-weather-widgets": "^2.2.0"
   }
 }

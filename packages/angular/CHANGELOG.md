@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.2.0
+
+### Minor Changes
+
+- d5dacce: Add SCAMs
+
+### Patch Changes
+
+- Updated dependencies [c1b205b]
+  - @ionic-enterprise/cs-demo-weather-widgets@2.2.0
+
 ## 2.1.0
 
 ### Patch Changes
