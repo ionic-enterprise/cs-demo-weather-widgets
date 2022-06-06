@@ -8,10 +8,10 @@ This project was put together in order to show a simple monorepo architecture an
 
 If you would like to build this for yourself, you can follow these steps.
 
-- `git clone`
-- `npm i`
-- `npm run bootstrap`
-- `npm run build`
+- `git clone https://github.com/ionic-enterprise/cs-demo-weather-widgets.git`
+- `cd cs-demo-weather-widgets`
+- `pnpm i`
+- `pnpm build`
 
 ## Making Changes
 
