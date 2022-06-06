@@ -42,7 +42,9 @@ The publishing process involves three main steps: bump the versions, tag the bum
 - Bump the versions
   - `git checkout main` (also, make sure everything you want is there, everything is pushed, etc)
   - `pnpm bump`
-  - `git commit -m "chore(): upgrade the version to x.y.z"`
+  - review the changes
+  - `git add .`
+  - `git commit -m "chore(): update the version to x.y.z"`
 - Tag the bump commit
   - `git tag -a v2.0.0 -m "release v2.0.0"`
   - `git push --tags`
