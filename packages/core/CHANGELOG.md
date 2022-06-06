@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.3.0
+
+### Minor Changes
+
+- 593f6b0: Add `--csdemo-daily-forecast-description-min-width` to allow better alignment in lists
+
 ## 2.2.0
 
 ### Patch Changes

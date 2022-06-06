@@ -1,5 +1,12 @@
 # Change Log
 
+## 2.3.0
+
+### Patch Changes
+
+- Updated dependencies [593f6b0]
+  - @ionic-enterprise/cs-demo-weather-widgets@2.3.0
+
 ## 2.2.0
 
 ### Patch Changes
