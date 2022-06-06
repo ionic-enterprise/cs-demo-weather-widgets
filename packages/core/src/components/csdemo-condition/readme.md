@@ -1,5 +1,15 @@
 # csdemo-condition
 
+## Styling
+
+| Custom Property                      | Description
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --csdemo-condition-image-height      | The height to use for the image portion of the condition.
+| --csdemo-condition-label-font-size   | The font size used for the condition label.
+| --csdemo-condition-label-font-weight | The font weight used for the condition label.
+
+All styling is optional. If not specified, the system default styling is used.
+
 <!-- Auto Generated Below -->
 
 

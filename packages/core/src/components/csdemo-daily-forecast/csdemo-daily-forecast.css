@@ -12,6 +12,7 @@
   padding-right: var(--csdemo-daily-forecast-description-padding-right);
   padding-top: var(--csdemo-daily-forecast-description-padding-top);
   padding-bottom: var(--csdemo-daily-forecast-description-padding-bottom);
+  min-width: var(--csdemo-daily-forecast-description-min-width);
 }
 
 .description .date {
