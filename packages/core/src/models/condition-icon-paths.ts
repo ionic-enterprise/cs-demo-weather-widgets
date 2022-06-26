@@ -4,8 +4,8 @@ export interface ConditionIconPaths {
   lightRain?: string;
   shower?: string;
   fog?: string;
-  sunnyThunderStorm?: string;
-  thunderStorm?: string;
+  sunnyThunderstorm?: string;
+  thunderstorm?: string;
   snow?: string;
   unknown?: string;
 }

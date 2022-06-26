@@ -136,8 +136,8 @@ export const environment = {
     cloudy: 'alt/location/cloudy.png',
     lightRain: 'alt/location/light-rain.png',
     shower: 'alt/location/shower.png',
-    sunnyThunderStorm: 'alt/location/sunny-tstorm.png',
-    thunderStorm: 'alt/location/tstorm.png',
+    sunnyThunderstorm: 'alt/location/sunny-tstorm.png',
+    thunderstorm: 'alt/location/tstorm.png',
     fog: 'alt/location/fog.png',
     snow: 'alt/location/snow.png',
     unknown: 'alt/location/unknown.png',
@@ -151,7 +151,7 @@ You can also specify a partial list if only only a couple of icons are different
 export const environment = {
   production: false,
   icons: {
-    sunnyThunderStorm: 'assets/images/partial-tstorm.png',
+    sunnyThunderstorm: 'assets/images/partial-tstorm.png',
     unknown: 'assets/images/this-is-wrong.png',
   },
 };

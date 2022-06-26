@@ -29,8 +29,8 @@ describe('csdemo-daily-forecast', () => {
         cloudy: './assets/images/cloudy.png',
         lightRain: './assets/images/light-rain.png',
         shower: './assets/images/shower.png',
-        sunnyThunderStorm: './assets/images/sunny-tstorm.png',
-        thunderStorm: './assets/images/tstorm.png',
+        sunnyThunderstorm: './assets/images/sunny-tstorm.png',
+        thunderstorm: './assets/images/tstorm.png',
         fog: './assets/images/fog.png',
         snow: './assets/images/snow.png',
         unknown: './assets/images/unknown.png',
@@ -105,7 +105,7 @@ describe('csdemo-daily-forecast', () => {
     it('displays the label for the worst condition', async () => {
       const condition = await page.find('csdemo-daily-forecast >>> csdemo-condition');
       const label = condition.shadowRoot.querySelector('.condition-label');
-      expect(label.textContent).toEqual('Snow');
+      expect(label.textContent).toEqual('Light snow');
     });
 
     it('displays the low temperature', async () => {

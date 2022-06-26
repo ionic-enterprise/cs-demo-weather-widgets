@@ -33,8 +33,8 @@ export class IconMap {
   cloudy = 'assets/images/cloudy.png';
   lightRain = 'assets/images/light-rain.png';
   shower = 'assets/images/shower.png';
-  sunnyThunderStorm = 'assets/images/sunny-tstorm.png';
-  thunderStorm = 'assets/images/tstorm.png';
+  sunnyThunderstorm = 'assets/images/sunny-tstorm.png';
+  thunderstorm = 'assets/images/tstorm.png';
   fog = 'assets/images/fog.png';
   snow = 'assets/images/snow.png';
   unknown = 'assets/images/unknown.png';

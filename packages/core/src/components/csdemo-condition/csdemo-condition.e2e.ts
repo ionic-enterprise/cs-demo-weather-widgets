@@ -41,8 +41,8 @@ describe('csdemo-condition', () => {
       cloudy: './assets/images/cloudy.png',
       lightRain: './assets/images/light-rain.png',
       shower: './assets/images/shower.png',
-      sunnyThunderStorm: './assets/images/sunny-tstorm.png',
-      thunderStorm: './assets/images/tstorm.png',
+      sunnyThunderstorm: './assets/images/sunny-tstorm.png',
+      thunderstorm: './assets/images/tstorm.png',
       fog: './assets/images/fog.png',
       snow: './assets/images/snow.png',
       unknown: './assets/images/unknown.png',
@@ -57,73 +57,13 @@ describe('csdemo-condition', () => {
     element.setProperty('condition', 200);
     await page.waitForChanges();
     const img = await page.find('csdemo-condition >>> img');
-    expect(img.getAttribute('src')).toEqual(paths.thunderStorm);
+    expect(img.getAttribute('src')).toEqual(paths.thunderstorm);
 
-    element.setProperty('condition', 229);
+    element.setProperty('condition', 221);
     await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.thunderStorm);
-
-    element.setProperty('condition', 230);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.sunnyThunderStorm);
-
-    element.setProperty('condition', 299);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.sunnyThunderStorm);
-
-    element.setProperty('condition', 300);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.lightRain);
-
-    element.setProperty('condition', 399);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.lightRain);
-
-    element.setProperty('condition', 500);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.shower);
-
-    element.setProperty('condition', 599);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.shower);
-
-    element.setProperty('condition', 600);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.snow);
-
-    element.setProperty('condition', 699);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.snow);
-
-    element.setProperty('condition', 701);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.fog);
-
-    element.setProperty('condition', 771);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.fog);
+    expect(img.getAttribute('src')).toEqual(paths.sunnyThunderstorm);
 
     element.setProperty('condition', 800);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.sunny);
-
-    element.setProperty('condition', 801);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.cloudy);
-
-    element.setProperty('condition', 809);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.cloudy);
-
-    element.setProperty('condition', 810);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.unknown);
-
-    element.setProperty('condition', 903);
-    await page.waitForChanges();
-    expect(img.getAttribute('src')).toEqual(paths.snow);
-
-    element.setProperty('condition', 904);
     await page.waitForChanges();
     expect(img.getAttribute('src')).toEqual(paths.sunny);
   });
@@ -137,74 +77,14 @@ describe('csdemo-condition', () => {
     element.setProperty('condition', 200);
     await page.waitForChanges();
     const label = await page.find('csdemo-condition >>> .condition-label');
-    expect(label.textContent).toEqual('Thunderstorms');
+    expect(label.textContent).toEqual('Thunderstorm with light rain');
 
-    element.setProperty('condition', 229);
+    element.setProperty('condition', 202);
     await page.waitForChanges();
-    expect(label.textContent).toEqual('Thunderstorms');
-
-    element.setProperty('condition', 230);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Scattered Storms');
-
-    element.setProperty('condition', 299);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Scattered Storms');
-
-    element.setProperty('condition', 300);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Rain');
-
-    element.setProperty('condition', 399);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Rain');
-
-    element.setProperty('condition', 500);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Showers');
-
-    element.setProperty('condition', 599);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Showers');
-
-    element.setProperty('condition', 600);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Snow');
-
-    element.setProperty('condition', 699);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Snow');
-
-    element.setProperty('condition', 701);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Fog');
-
-    element.setProperty('condition', 771);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Fog');
+    expect(label.textContent).toEqual('Thunderstorm with heavy rain');
 
     element.setProperty('condition', 800);
     await page.waitForChanges();
-    expect(label.textContent).toEqual('Sunny');
-
-    element.setProperty('condition', 801);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Cloudy');
-
-    element.setProperty('condition', 809);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Cloudy');
-
-    element.setProperty('condition', 810);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Unknown');
-
-    element.setProperty('condition', 903);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Snow');
-
-    element.setProperty('condition', 904);
-    await page.waitForChanges();
-    expect(label.textContent).toEqual('Sunny');
+    expect(label.textContent).toEqual('Clear sky');
   });
 });

@@ -29,8 +29,8 @@ If you use a different location or name, you need to let the components know the
     cloudy: 'alt-location/images/cloudy.png',
     lightRain: 'alt-location/images/light-rain.png',
     shower: 'alt-location/images/shower.png',
-    sunnyThunderStorm: 'alt-location/images/sunny-tstorm.png',
-    thunderStorm: 'alt-location/images/tstorm.png',
+    sunnyThunderstorm: 'alt-location/images/sunny-tstorm.png',
+    thunderstorm: 'alt-location/images/tstorm.png',
     fog: 'alt-location/images/fog.png',
     snow: 'alt-location/images/snow.png',
     unknown: 'alt-location/images/unknown.png',
@@ -41,7 +41,7 @@ You can also use a partial mapping if only a couple of names have changed:
 
 ```typescript
   const icons = {
-    sunnyThunderStorm: 'assets/images/partial-tstorm.png',
+    sunnyThunderstorm: 'assets/images/partial-tstorm.png',
     unknown: 'assets/images/dunno.png',
   };
 ```

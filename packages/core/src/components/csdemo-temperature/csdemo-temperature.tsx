@@ -17,7 +17,7 @@ export class csdemoTemperature {
    */
   @Prop() scale: string;
 
-  private celcius(): string {
+  private celsius(): string {
     return `${(this.temperature - 273.15).toFixed(0)} ℃`;
   }
 
@@ -27,7 +27,7 @@ export class csdemoTemperature {
 
   render() {
     if (this.temperature || this.temperature === 0) {
-      return <span>{this.scale === 'C' ? this.celcius() : this.fahrenheit()}</span>;
+      return <span>{this.scale === 'C' ? this.celsius() : this.fahrenheit()}</span>;
     }
   }
 }

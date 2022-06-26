@@ -19,7 +19,7 @@ describe('csdemo-temperature', () => {
     expect(labelElement).toBeFalsy();
   });
 
-  describe('Celcius', () => {
+  describe('Celsius', () => {
     beforeEach(async () => {
       element.setProperty('scale', 'C');
       await page.waitForChanges();
