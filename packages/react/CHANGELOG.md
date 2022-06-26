@@ -1,5 +1,19 @@
 # Change Log
 
+## 3.0.0
+
+### Major Changes
+
+- 8826232: Modified the thunderstorm related icon keys because thunderstorm is a single word.
+- e0e2944: Modify the Forecast model to map to the Open Weather Map one-click API data. This means only passing a single Forecast object with all of the data.
+
+### Patch Changes
+
+- Updated dependencies [8826232]
+- Updated dependencies [8826232]
+- Updated dependencies [e0e2944]
+  - @ionic-enterprise/cs-demo-weather-widgets@3.0.0
+
 ## 2.3.0
 
 ### Patch Changes

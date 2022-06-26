@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.0.0
+
+### Major Changes
+
+- 8826232: Modified the thunderstorm related icon keys because thunderstorm is a single word.
+- 8826232: Changed the descriptions used for the conditions to more closely match Open Weather Map specifications.
+- e0e2944: Modify the Forecast model to map to the Open Weather Map one-click API data. This means only passing a single Forecast object with all of the data.
+
 ## 2.3.0
 
 ### Minor Changes
