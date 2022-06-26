@@ -47,7 +47,7 @@
         <csdemo-condition condition="200"></csdemo-condition>
         <csdemo-condition condition="230"></csdemo-condition>
         <csdemo-condition condition="300"></csdemo-condition>
-        <csdemo-condition condition="500"></csdemo-condition>
+        <csdemo-condition condition="502"></csdemo-condition>
         <csdemo-condition condition="600"></csdemo-condition>
         <csdemo-condition condition="701"></csdemo-condition>
         <csdemo-condition condition="800"></csdemo-condition>
@@ -68,22 +68,15 @@
       </div>
     </div>
     <script type="text/javascript">
-      const sampleForecasts = [
-        {
-          condition: 800,
-          date: Date.parse('1995-12-17'),
-          temperature: 299.15,
-        },
-        {
-          condition: 800,
-          date: Date.parse('1995-12-17'),
-          temperature: 291.483,
-        },
-      ];
+      const sampleForecast = {
+        condition: 800,
+        date: Date.parse('1995-12-17'),
+        low: 299.15,
+        high: 304.25,
+      };
       const forecasts = document.querySelectorAll('csdemo-daily-forecast');
       forecasts.forEach((elem, key, parent) => {
-        console.log('forecast', elem, key);
-        elem.forecasts = sampleForecasts;
+        elem.forecast = sampleForecast;
         elem.scale = 'F';
       });
     </script>

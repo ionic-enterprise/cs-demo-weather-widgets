@@ -95,22 +95,21 @@ Displays the current condition in both text and icon form.
 Displays the forecast for a given day.
 
 ```html
-<csdemo-daily-forecast scale="F" [forecasts]="forecastData"></csdemo-daily-forecast>
+<csdemo-daily-forecast scale="F" [forecast]="forecastData"></csdemo-daily-forecast>
 ```
 
-The forecast property is an array of forecast data for a single day in the following format:
+The forecast property is a forecast data object in the following format:
 
 ```TypeScript
 export interface Forecast {
   date: Date;
   condition: number;
-  temperature: number;
+  low: number;
+  high: number;
 }
 ```
 
-This data will be the weather conditions every X hours throughout the day. The component figures out a general condition to use for that day from the given data.
-
-The temperature is specified in Kelvin.
+The low and high temperatures are specified in Kelvin.
 
 #### `csdemo-uv-index`
 
@@ -163,7 +162,7 @@ You can pass the icons to any component that has a `iconPaths` property:
 
 ```html
 <csdemo-condition [condition]="200" [iconPaths]="icons"></csdemo-condition>
-<csdemo-daily-forecast scale="F" [forecasts]="icons" [iconPaths]="iconMap"></csdemo-daily-forecast>
+<csdemo-daily-forecast scale="F" [forecast]="forecast" [iconPaths]="icons"></csdemo-daily-forecast>
 ```
 
 ## Conclusion

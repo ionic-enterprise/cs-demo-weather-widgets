@@ -1,5 +1,4 @@
 import { ConditionIconPaths } from '../../models/condition-icon-paths';
-import { Forecast } from '../../models/forecast';
 
 export class WeatherCondition {
   private sunny = 1;
@@ -346,31 +345,5 @@ export class WeatherCondition {
     const paths = { ...this.defaultIconPaths, ...overridePaths };
     const c = this.conditions[condition];
     return paths[c?.image || 'unknown'];
-  }
-
-  high(forecasts: Array<Forecast>): number {
-    let value: number;
-    if (forecasts) {
-      forecasts.forEach((forecast) => (value = forecast.temperature > (value || 0) ? forecast.temperature : value));
-    }
-    return value;
-  }
-
-  low(forecasts: Array<Forecast>): number {
-    let value: number;
-    if (forecasts) {
-      forecasts.forEach((forecast) => (value = forecast.temperature < value || !value ? forecast.temperature : value));
-    }
-    return value;
-  }
-
-  mostSeriousCondition(forecasts: Array<Forecast>): number {
-    let value: number;
-    if (forecasts) {
-      forecasts.forEach(
-        (forecast) => (value = this.rank(forecast.condition) > this.rank(value) ? forecast.condition : value)
-      );
-    }
-    return value;
   }
 }

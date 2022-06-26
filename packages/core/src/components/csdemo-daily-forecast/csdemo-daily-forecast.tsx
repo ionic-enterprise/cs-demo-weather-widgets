@@ -1,4 +1,4 @@
-import { Component, Prop, h, Watch } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 import { format } from 'date-fns';
 import { ConditionIconPaths } from '../../models/condition-icon-paths';
 import { Forecast } from '../../models/forecast';
@@ -11,13 +11,12 @@ import { WeatherCondition } from '../../services/weather-condition/weather-condi
 })
 export class csdemoDailyForecast {
   /**
-   * An array of forecasts for the day. This allows the component to determine the overall
-   * condition to display for the day as well as the high and low temperatures.
+   * The forecast to display information about.
    */
-  @Prop() forecasts: Array<Forecast>;
+  @Prop() forecast: Forecast;
 
   /**
-   * The temperature is specified in Kelvin.
+   * The temperature in the forecast is specified in Kelvin.
    * The scale specifies the units to display the temperature in, 'C' for Celsius and 'F' for Fahrenheit.
    */
   @Prop() scale: string;
@@ -28,58 +27,37 @@ export class csdemoDailyForecast {
    */
   @Prop() iconPaths: ConditionIconPaths;
 
-  private condition: number;
-  private iconUrl: string;
   private weatherCondition: WeatherCondition;
 
   constructor() {
     this.weatherCondition = new WeatherCondition();
   }
 
-  @Watch('forecasts')
-  handleForcastsChange() {
-    this.setCondition();
-    this.setIconUrl();
-  }
-
-  componentWillLoad() {
-    if (this.forecasts) {
-      this.handleForcastsChange();
-    }
-  }
-
-  private setCondition() {
-    this.condition = this.forecasts && this.weatherCondition.mostSeriousCondition(this.forecasts);
-  }
-
-  private setIconUrl() {
-    this.iconUrl = this.condition && this.weatherCondition.imageUrl(this.condition, this.iconPaths);
-  }
-
   private dateString(): string {
-    return this.forecasts && this.forecasts.length && format(new Date(this.forecasts[0].date), 'E MMM d, yyyy');
+    return this.forecast && format(new Date(this.forecast.date), 'E MMM d, yyyy');
   }
 
   render() {
-    const label = this.weatherCondition.description(this.condition);
+    const label = this.forecast && this.weatherCondition.description(this.forecast.condition);
+    const iconUrl = this.forecast && this.weatherCondition.imageUrl(this.forecast.condition, this.iconPaths);
     return (
       <div class="container">
-        {this.iconUrl && (
+        {iconUrl && (
           <div class="icon">
-            <img alt={label} src={this.iconUrl} />
+            <img alt={label} src={iconUrl} />
           </div>
         )}
         <div class="description">
           <div class="date">{this.dateString()}</div>
-          <csdemo-condition condition={this.condition} noIcon={true} />
+          <csdemo-condition condition={this.forecast?.condition} noIcon={true} />
           <div class="temperature-group">
             <div class="temperature-item temperature-low">
               <span class="label">Low: </span>
-              <csdemo-temperature temperature={this.weatherCondition.low(this.forecasts)} scale={this.scale} />
+              <csdemo-temperature temperature={this.forecast?.low} scale={this.scale} />
             </div>
             <div class="temperature-item temperature-high">
               <span class="label">High: </span>
-              <csdemo-temperature temperature={this.weatherCondition.high(this.forecasts)} scale={this.scale} />
+              <csdemo-temperature temperature={this.forecast?.high} scale={this.scale} />
             </div>
           </div>
         </div>

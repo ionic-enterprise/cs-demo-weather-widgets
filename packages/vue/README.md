@@ -50,7 +50,7 @@ The overrides can be specified on any component that has a `iconPaths` property:
 
 ```html
   <csdemo-condition :condition="condition" :iconPaths="icons"></csdemo-condition>
-  <csdemo-daily-forecast :scale="scale" :forecasts="forecasts" :iconPaths="icons"></csdemo-daily-forecast>
+  <csdemo-daily-forecast :scale="scale" :forecast="forecast" :iconPaths="icons"></csdemo-daily-forecast>
 ```
 
 ### `csdemo-temperature`
@@ -140,7 +140,7 @@ Displays the forecast for a given day.
 
 ```html
 <template>
-  <csdemo-daily-forecast :scale="scale" :forecasts="forecasts"></csdemo-daily-forecast>
+  <csdemo-daily-forecast :scale="scale" :forecast="forecast"></csdemo-daily-forecast>
 </template>
 
 <script lang="ts">
@@ -158,19 +158,18 @@ export default defineComponent({
 });
 ```
 
-The forecast property is an array of forecast data for a single day in the following format:
+The forecast property is a forecast data object in the following format:
 
 ```TypeScript
 export interface Forecast {
   date: Date;
   condition: number;
-  temperature: number;
+  low: number;
+  high: number;
 }
 ```
 
-This data will be the weather conditions every X hours throughout the day. The component figures out a general condition to use for that day from the given data.
-
-The temperature is specified in Kelvin.
+The low and high temperatures are specified in Kelvin.
 
 The condition is one of the [condition codes](https://openweathermap.org/weather-conditions) used by [OpenWeatherMap.org](https://openweathermap.org).
 

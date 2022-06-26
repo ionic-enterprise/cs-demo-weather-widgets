@@ -20,7 +20,7 @@ export const CsdemoCondition = /*@__PURE__*/ defineContainer<JSX.CsdemoCondition
 
 
 export const CsdemoDailyForecast = /*@__PURE__*/ defineContainer<JSX.CsdemoDailyForecast>('csdemo-daily-forecast', defineCsdemoDailyForecast, [
-  'forecasts',
+  'forecast',
   'scale',
   'iconPaths'
 ]);

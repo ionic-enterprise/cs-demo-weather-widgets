@@ -28,15 +28,15 @@ export namespace Components {
     }
     interface CsdemoDailyForecast {
         /**
-          * An array of forecasts for the day. This allows the component to determine the overall condition to display for the day as well as the high and low temperatures.
+          * The forecast to display information about.
          */
-        "forecasts": Array<Forecast>;
+        "forecast": Forecast;
         /**
           * Override the default icon paths. If the default icon names that we have are used and put in `assets/images`.
          */
         "iconPaths": ConditionIconPaths;
         /**
-          * The temperature is specified in Kelvin. The scale specifies the units to display the temperature in, 'C' for Celsius and 'F' for Fahrenheit.
+          * The temperature in the forecast is specified in Kelvin. The scale specifies the units to display the temperature in, 'C' for Celsius and 'F' for Fahrenheit.
          */
         "scale": string;
     }
@@ -110,15 +110,15 @@ declare namespace LocalJSX {
     }
     interface CsdemoDailyForecast {
         /**
-          * An array of forecasts for the day. This allows the component to determine the overall condition to display for the day as well as the high and low temperatures.
+          * The forecast to display information about.
          */
-        "forecasts"?: Array<Forecast>;
+        "forecast"?: Forecast;
         /**
           * Override the default icon paths. If the default icon names that we have are used and put in `assets/images`.
          */
         "iconPaths"?: ConditionIconPaths;
         /**
-          * The temperature is specified in Kelvin. The scale specifies the units to display the temperature in, 'C' for Celsius and 'F' for Fahrenheit.
+          * The temperature in the forecast is specified in Kelvin. The scale specifies the units to display the temperature in, 'C' for Celsius and 'F' for Fahrenheit.
          */
         "scale"?: string;
     }

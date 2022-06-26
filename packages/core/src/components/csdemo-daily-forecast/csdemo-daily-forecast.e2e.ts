@@ -1,4 +1,5 @@
 import { E2EElement, E2EPage, newE2EPage } from '@stencil/core/testing';
+import { Forecast } from '../../models/forecast';
 
 describe('csdemo-daily-forecast', () => {
   describe('without data', () => {
@@ -19,7 +20,7 @@ describe('csdemo-daily-forecast', () => {
 
   describe('with data', () => {
     let paths;
-    let forecasts;
+    let forecast: Forecast;
     let element: E2EElement;
     let page: E2EPage;
 
@@ -36,58 +37,17 @@ describe('csdemo-daily-forecast', () => {
         unknown: './assets/images/unknown.png',
       };
 
-      forecasts = [
-        {
-          date: new Date(2018, 5, 17, 10, 0, 0),
-          condition: 800,
-          temperature: 287.15,
-        },
-        {
-          date: new Date(2018, 5, 17, 11, 0, 0),
-          condition: 800,
-          temperature: 286.65,
-        },
-        {
-          date: new Date(2018, 5, 17, 13, 0, 0),
-          condition: 801,
-          temperature: 289.65,
-        },
-        {
-          date: new Date(2018, 5, 17, 14, 45, 0),
-          condition: 801,
-          temperature: 290.65,
-        },
-        {
-          date: new Date(2018, 5, 17, 15, 0, 0),
-          condition: 801,
-          temperature: 295.15,
-        },
-        {
-          date: new Date(2018, 5, 17, 17, 0, 0),
-          condition: 305,
-          temperature: 297.15,
-        },
-        {
-          date: new Date(2018, 5, 17, 19, 0, 0),
-          condition: 600,
-          temperature: 270.0,
-        },
-        {
-          date: new Date(2018, 5, 17, 20, 0, 0),
-          condition: 800,
-          temperature: 293.65,
-        },
-        {
-          date: new Date(2018, 5, 17, 23, 0, 0),
-          condition: 800,
-          temperature: 288.65,
-        },
-      ];
+      forecast = {
+        date: new Date(2018, 5, 17, 19, 0, 0),
+        condition: 600,
+        low: 270.15,
+        high: 297.15,
+      };
       page = await newE2EPage();
       await page.setContent('<csdemo-daily-forecast></csdemo-daily-forecast>');
       element = await page.find('csdemo-daily-forecast');
       element.setProperty('iconPaths', paths);
-      element.setProperty('forecasts', forecasts);
+      element.setProperty('forecast', forecast);
       element.setProperty('scale', 'C');
       await page.waitForChanges();
     });
@@ -97,12 +57,12 @@ describe('csdemo-daily-forecast', () => {
       expect(dateElement.textContent).toEqual('Sun Jun 17, 2018');
     });
 
-    it('displays the icon for the worst condition', async () => {
+    it('displays the icon for the condition', async () => {
       const imgElement = await page.find('csdemo-daily-forecast >>> img');
       expect(imgElement.getAttribute('src')).toEqual('./assets/images/snow.png');
     });
 
-    it('displays the label for the worst condition', async () => {
+    it('displays the label for the condition', async () => {
       const condition = await page.find('csdemo-daily-forecast >>> csdemo-condition');
       const label = condition.shadowRoot.querySelector('.condition-label');
       expect(label.textContent).toEqual('Light snow');

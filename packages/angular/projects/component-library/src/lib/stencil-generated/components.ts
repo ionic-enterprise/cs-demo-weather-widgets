@@ -36,13 +36,13 @@ export declare interface CsdemoDailyForecast extends Components.CsdemoDailyForec
 
 @ProxyCmp({
   defineCustomElementFn: defineCsdemoDailyForecast,
-  inputs: ['forecasts', 'iconPaths', 'scale']
+  inputs: ['forecast', 'iconPaths', 'scale']
 })
 @Component({
   selector: 'csdemo-daily-forecast',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['forecasts', 'iconPaths', 'scale']
+  inputs: ['forecast', 'iconPaths', 'scale']
 })
 export class CsdemoDailyForecast {
   protected el: HTMLElement;
