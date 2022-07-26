@@ -37,6 +37,8 @@ This project uses [changesets](https://github.com/changesets/changesets) to gene
 
 **Note:** these packages are specifically scoped to our `@ionic-enterprise` scope. As such, you need to be a member of the Ionic Enterprise org in order to publish them. If you would like to publish your own version for any reason, please fork this project and change the package names to be scoped to your own user or organization.
 
+**Not sure how to create a scope in npm?** You need to [create an NPM account](https://docs.npmjs.com/creating-a-new-npm-user-account), and an [organization](https://docs.npmjs.com/creating-an-organization). That new organization name will be your scope. As an example, if your organzation name is `acme`, your scope would be `@acme`.
+
 The publishing process involves three main steps: bump the versions, tag the bump commit, publish:
 
 - Bump the versions
