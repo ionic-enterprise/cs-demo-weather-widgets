@@ -10,7 +10,7 @@
     "test": "pnpm run -r test"
   },
   "devDependencies": {
-    "@changesets/cli": "~2.23.2",
+    "@changesets/cli": "~2.24.1",
     "@ionic/prettier-config": "~2.0.0",
     "husky": "~8.0.1",
     "prettier": "~2.7.1",
