@@ -1,5 +1,16 @@
 # Change Log
 
+## 3.1.0
+
+### Minor Changes
+
+- Upgrade to the Stencil v3 release candidate
+
+### Patch Changes
+
+- Updated dependencies
+  - @ionic-enterprise/cs-demo-weather-widgets@3.1.0
+
 ## 3.0.1
 
 ### Patch Changes

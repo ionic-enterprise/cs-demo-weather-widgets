@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.0
+
+### Minor Changes
+
+- Upgrade to the Stencil v3 release candidate
+
 ## 3.0.1
 
 ### Patch Changes

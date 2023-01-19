@@ -2,7 +2,7 @@
   "name": "@ionic-enterprise/cs-demo-weather-widgets-angular",
   "description": "Angular specific proxies for @ionic-enterprise/cs-demo-weather-widgets",
   "license": "MIT",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ionic-enterprise/cs-demo-weather-widgets.git"
@@ -24,7 +24,7 @@
     "dist/"
   ],
   "dependencies": {
-    "@ionic-enterprise/cs-demo-weather-widgets": "^3.0.1"
+    "@ionic-enterprise/cs-demo-weather-widgets": "^3.1.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.3",
