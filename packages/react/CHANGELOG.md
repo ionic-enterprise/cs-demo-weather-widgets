@@ -1,5 +1,15 @@
 # Change Log
 
+## 3.0.1
+
+### Patch Changes
+
+- b8f771f: Updated to the latest v2 Stencil
+- cd4168b: update dependencies
+- Updated dependencies [b8f771f]
+- Updated dependencies [cd4168b]
+  - @ionic-enterprise/cs-demo-weather-widgets@3.0.1
+
 ## 3.0.0
 
 ### Major Changes

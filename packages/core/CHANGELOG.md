@@ -1,5 +1,12 @@
 # Change Log
 
+## 3.0.1
+
+### Patch Changes
+
+- b8f771f: Updated to the latest v2 Stencil
+- cd4168b: update dependencies
+
 ## 3.0.0
 
 ### Major Changes
