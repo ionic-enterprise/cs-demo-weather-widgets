@@ -1,6 +1,7 @@
 /* tslint:disable */
 /* auto-generated angular directive proxies */
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, NgZone } from '@angular/core';
+
 import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
 import type { Components } from '@ionic-enterprise/cs-demo-weather-widgets/components';
@@ -9,10 +10,6 @@ import { defineCustomElement as defineCsdemoCondition } from '@ionic-enterprise/
 import { defineCustomElement as defineCsdemoDailyForecast } from '@ionic-enterprise/cs-demo-weather-widgets/components/csdemo-daily-forecast.js';
 import { defineCustomElement as defineCsdemoTemperature } from '@ionic-enterprise/cs-demo-weather-widgets/components/csdemo-temperature.js';
 import { defineCustomElement as defineCsdemoUvIndex } from '@ionic-enterprise/cs-demo-weather-widgets/components/csdemo-uv-index.js';
-
-
-export declare interface CsdemoCondition extends Components.CsdemoCondition {}
-
 @ProxyCmp({
   defineCustomElementFn: defineCsdemoCondition,
   inputs: ['condition', 'iconPaths', 'noIcon', 'noLabel']
@@ -21,7 +18,8 @@ export declare interface CsdemoCondition extends Components.CsdemoCondition {}
   selector: 'csdemo-condition',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['condition', 'iconPaths', 'noIcon', 'noLabel']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['condition', 'iconPaths', 'noIcon', 'noLabel'],
 })
 export class CsdemoCondition {
   protected el: HTMLElement;
@@ -32,7 +30,8 @@ export class CsdemoCondition {
 }
 
 
-export declare interface CsdemoDailyForecast extends Components.CsdemoDailyForecast {}
+export declare interface CsdemoCondition extends Components.CsdemoCondition {}
+
 
 @ProxyCmp({
   defineCustomElementFn: defineCsdemoDailyForecast,
@@ -42,7 +41,8 @@ export declare interface CsdemoDailyForecast extends Components.CsdemoDailyForec
   selector: 'csdemo-daily-forecast',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['forecast', 'iconPaths', 'scale']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['forecast', 'iconPaths', 'scale'],
 })
 export class CsdemoDailyForecast {
   protected el: HTMLElement;
@@ -53,7 +53,8 @@ export class CsdemoDailyForecast {
 }
 
 
-export declare interface CsdemoTemperature extends Components.CsdemoTemperature {}
+export declare interface CsdemoDailyForecast extends Components.CsdemoDailyForecast {}
+
 
 @ProxyCmp({
   defineCustomElementFn: defineCsdemoTemperature,
@@ -63,7 +64,8 @@ export declare interface CsdemoTemperature extends Components.CsdemoTemperature 
   selector: 'csdemo-temperature',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['scale', 'temperature']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['scale', 'temperature'],
 })
 export class CsdemoTemperature {
   protected el: HTMLElement;
@@ -74,7 +76,8 @@ export class CsdemoTemperature {
 }
 
 
-export declare interface CsdemoUvIndex extends Components.CsdemoUvIndex {}
+export declare interface CsdemoTemperature extends Components.CsdemoTemperature {}
+
 
 @ProxyCmp({
   defineCustomElementFn: defineCsdemoUvIndex,
@@ -84,7 +87,8 @@ export declare interface CsdemoUvIndex extends Components.CsdemoUvIndex {}
   selector: 'csdemo-uv-index',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['uvIndex']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['uvIndex'],
 })
 export class CsdemoUvIndex {
   protected el: HTMLElement;
@@ -93,3 +97,8 @@ export class CsdemoUvIndex {
     this.el = r.nativeElement;
   }
 }
+
+
+export declare interface CsdemoUvIndex extends Components.CsdemoUvIndex {}
+
+
