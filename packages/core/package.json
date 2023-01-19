@@ -20,7 +20,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
-    "@stencil/core": "^2.22.1",
+    "@stencil/core": "3.0.0-rc.0",
     "date-fns": "~2.29.3",
     "eslint-plugin-react": "~7.31.11"
   },

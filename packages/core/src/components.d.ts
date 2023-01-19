@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ConditionIconPaths } from "./models/condition-icon-paths";
 import { Forecast } from "./models/forecast";
+export { ConditionIconPaths } from "./models/condition-icon-paths";
+export { Forecast } from "./models/forecast";
 export namespace Components {
     interface CsdemoCondition {
         /**
