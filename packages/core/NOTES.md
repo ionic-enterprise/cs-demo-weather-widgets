@@ -33,11 +33,14 @@ The framework wrapper projects that we will install later will default to using 
 ```typescript
     {
       type: 'dist-custom-elements',
+      customElementsExportBehavior: 'single-export-module',
       dir: 'components',
     },
 ```
 
 That is the only change required at this point. The rest of the configuration that you currently see in this file will be added as we create each of the Framework Wrapper packages.
+
+The `customElementsExportBehavior` setting applies to Stencil 3 and above. This option does not exist in Stencil 2 or before. In older versions of Stencil, this was the default behavior.
 
 **Note:** you _can_ change the `namespace` if you want, and we _did_ do that. If you do this, you need to update the `unpkg` setting in the `package.json` file.
 
