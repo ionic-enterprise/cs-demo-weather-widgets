@@ -29,7 +29,7 @@ importers:
       '@angular/platform-browser': ~13.3.0
       '@angular/platform-browser-dynamic': ~13.3.0
       '@angular/router': ~13.3.0
-      '@ionic-enterprise/cs-demo-weather-widgets': ^3.0.1
+      '@ionic-enterprise/cs-demo-weather-widgets': ^3.1.0
       '@types/jasmine': ~3.10.0
       '@types/node': ^12.11.1
       jasmine-core: ~4.0.0
@@ -74,7 +74,7 @@ importers:
   packages/core:
     specifiers:
       '@stencil/angular-output-target': ~0.5.0
-      '@stencil/core': 3.0.0-rc.1
+      '@stencil/core': 3.0.0
       '@stencil/eslint-plugin': ~0.4.0
       '@stencil/react-output-target': ~0.4.0
       '@stencil/vue-output-target': ~0.7.0
@@ -90,14 +90,14 @@ importers:
       puppeteer: ~13.6.0
       typescript: ~4.9.4
     dependencies:
-      '@stencil/core': 3.0.0-rc.1
+      '@stencil/core': 3.0.0
       date-fns: 2.29.3
       eslint-plugin-react: 7.31.11_eslint@7.32.0
     devDependencies:
-      '@stencil/angular-output-target': 0.5.0_@stencil+core@3.0.0-rc.1
+      '@stencil/angular-output-target': 0.5.0_@stencil+core@3.0.0
       '@stencil/eslint-plugin': 0.4.0_mamwogdn7jzzep2mbhwuilkuom
-      '@stencil/react-output-target': 0.4.0_@stencil+core@3.0.0-rc.1
-      '@stencil/vue-output-target': 0.7.0_@stencil+core@3.0.0-rc.1
+      '@stencil/react-output-target': 0.4.0_@stencil+core@3.0.0
+      '@stencil/vue-output-target': 0.7.0_@stencil+core@3.0.0
       '@types/jest': 27.5.1
       '@typescript-eslint/eslint-plugin': 4.33.0_thyv6urrmcfyirt6hwk42bhgva
       '@typescript-eslint/parser': 4.33.0_yfqovispp7u7jaktymfaqwl2py
@@ -110,7 +110,7 @@ importers:
 
   packages/react:
     specifiers:
-      '@ionic-enterprise/cs-demo-weather-widgets': ^3.0.1
+      '@ionic-enterprise/cs-demo-weather-widgets': ^3.1.0
       '@rollup/plugin-node-resolve': ~13.2.1
       '@types/jest': 23.3.9
       '@types/node': ^15.12.2
@@ -145,7 +145,7 @@ importers:
 
   packages/vue:
     specifiers:
-      '@ionic-enterprise/cs-demo-weather-widgets': ^3.0.1
+      '@ionic-enterprise/cs-demo-weather-widgets': ^3.1.0
       '@rollup/plugin-node-resolve': ~13.2.1
       rimraf: ~3.0.2
       rollup: ~2.70.2
@@ -2811,16 +2811,16 @@ packages:
       '@sinonjs/commons': 1.8.3
     dev: true
 
-  /@stencil/angular-output-target/0.5.0_@stencil+core@3.0.0-rc.1:
+  /@stencil/angular-output-target/0.5.0_@stencil+core@3.0.0:
     resolution: {integrity: sha512-U2I6dZdL8hvnogafG9IwtYRaAns5fQMacjee/3WNMRMYagrpz7R6cDdX4O0U8q6jks1ej91GchgZsQOVE9UcKg==}
     peerDependencies:
       '@stencil/core': ^2.9.0 || ^3.0.0-beta.0
     dependencies:
-      '@stencil/core': 3.0.0-rc.1
+      '@stencil/core': 3.0.0
     dev: true
 
-  /@stencil/core/3.0.0-rc.1:
-    resolution: {integrity: sha512-tSOpPHfeAAvODhMdKClWm927y7nB2Iq/xYMsb/Lxw08TlPUgfe/tNv9rTk2YjkTgTM+q1gL3zeGBk/BdGDy8Ag==}
+  /@stencil/core/3.0.0:
+    resolution: {integrity: sha512-MYhrOlnzAtBUJH0FEggaP2pwm5GUvkB4wYRpZZFtUzGXAPamvrsreUf8QsGe0C4NdFdk8NlUauFxEEGE3z1+Sw==}
     engines: {node: '>=14.10.0', npm: '>=6.0.0'}
     hasBin: true
 
@@ -2843,20 +2843,20 @@ packages:
       typescript: 4.9.4
     dev: true
 
-  /@stencil/react-output-target/0.4.0_@stencil+core@3.0.0-rc.1:
+  /@stencil/react-output-target/0.4.0_@stencil+core@3.0.0:
     resolution: {integrity: sha512-X7XW6aHSU7ZypkFj4wX/XL7ROj2GXcdTL+Emo1mKNg5laBcuTVtt8zPR4ERG/grq8ec8wav+FxBuSlQ3cH0qcg==}
     peerDependencies:
       '@stencil/core': ^2.9.0 || ^3.0.0-beta.0
     dependencies:
-      '@stencil/core': 3.0.0-rc.1
+      '@stencil/core': 3.0.0
     dev: true
 
-  /@stencil/vue-output-target/0.7.0_@stencil+core@3.0.0-rc.1:
+  /@stencil/vue-output-target/0.7.0_@stencil+core@3.0.0:
     resolution: {integrity: sha512-iPEgnT2z6HsfWVRWVZk5C1AaMZnbJjB+c/hvtWoO7B3aErTJB8Up6oFk/t3IRsr12aNuZ4fUra0FEDx9WweH0Q==}
     peerDependencies:
       '@stencil/core': ^2.9.0 || ^3.0.0-beta.0
     dependencies:
-      '@stencil/core': 3.0.0-rc.1
+      '@stencil/core': 3.0.0
     dev: true
 
   /@szmarczak/http-timer/1.1.2:
