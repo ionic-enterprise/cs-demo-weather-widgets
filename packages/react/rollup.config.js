@@ -3,11 +3,11 @@ import sourcemaps from 'rollup-plugin-sourcemaps';
 
 export default {
   input: {
-    index: 'dist-transpiled/index',
+    index: 'dist/index',
   },
   onwarn: function(warning) {
-    if ( warning.code === 'THIS_IS_UNDEFINED' ) { return; }
-    console.warn( warning.message );
+    if (warning.code === 'THIS_IS_UNDEFINED') { return; }
+    console.warn(warning.message);
   },
   output: [
     {

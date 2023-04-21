@@ -56,6 +56,7 @@
     "@angular/core": ">=13.3.0",
     "@angular/forms": ">=13.3.0",
     "@angular/router": ">=13.3.0",
+    "@ionic-enterprise/cs-demo-weather-widgets": "*",
     "rxjs": ">=7.5.0",
     "zone.js": ">=0.11.4"
   },
