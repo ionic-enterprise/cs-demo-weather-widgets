@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.1
+
+### Patch Changes
+
+- 981d0c3: update dependencies
+
 ## 3.1.0
 
 ### Minor Changes

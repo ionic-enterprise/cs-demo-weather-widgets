@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.1
+
+### Patch Changes
+
+- 981d0c3: update dependencies
+- Updated dependencies [981d0c3]
+  - @ionic-enterprise/cs-demo-weather-widgets@3.1.1
+
 ## 3.1.0
 
 ### Minor Changes
