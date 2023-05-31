@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 importers:
 
@@ -105,8 +109,8 @@ importers:
         specifier: ~0.5.0
         version: 0.5.0(@typescript-eslint/eslint-plugin@5.59.8)(@typescript-eslint/parser@5.59.8)(eslint-plugin-react@7.32.2)(eslint@8.41.0)(typescript@4.9.5)
       '@stencil/core':
-        specifier: 3.3.0
-        version: 3.3.0
+        specifier: 4.0.0-beta.0
+        version: 4.0.0-beta.0
       date-fns:
         specifier: ~2.30.0
         version: 2.30.0
@@ -116,13 +120,13 @@ importers:
     devDependencies:
       '@stencil/angular-output-target':
         specifier: ~0.6.0
-        version: 0.6.0(@stencil/core@3.3.0)
+        version: 0.6.0(@stencil/core@4.0.0-beta.0)
       '@stencil/react-output-target':
         specifier: ~0.5.0
-        version: 0.5.0(@stencil/core@3.3.0)
+        version: 0.5.0(@stencil/core@4.0.0-beta.0)
       '@stencil/vue-output-target':
         specifier: ~0.8.5
-        version: 0.8.5(@stencil/core@3.3.0)
+        version: 0.8.5(@stencil/core@4.0.0-beta.0)
       '@types/jest':
         specifier: ^27.5.2
         version: 27.5.2
@@ -2867,33 +2871,33 @@ packages:
       typescript: 4.9.5
     dev: false
 
-  /@stencil/angular-output-target@0.6.0(@stencil/core@3.3.0):
+  /@stencil/angular-output-target@0.6.0(@stencil/core@4.0.0-beta.0):
     resolution: {integrity: sha512-FqHeRSb125joYzT/jHg3uOz5vKNAg7m3ffI/XXoy2ENC2K9X6NgJp8zuYcqW/o9SlQ8CWuoAv5AiF+tayzDTFA==}
     peerDependencies:
       '@stencil/core': ^2.9.0 || ^3.0.0
     dependencies:
-      '@stencil/core': 3.3.0
+      '@stencil/core': 4.0.0-beta.0
     dev: true
 
-  /@stencil/core@3.3.0:
-    resolution: {integrity: sha512-+3hqJ8RmUvxz8FgvMP9lxYJdjb4EnZrkdo6ln5fUqGju62ORS5/Ch9m6OAIjlEn6CbDb5Uf1OdeMjO87DJwIAA==}
+  /@stencil/core@4.0.0-beta.0:
+    resolution: {integrity: sha512-sgA3nAHXyxB2U4+pazVdL27tJJfUoEalLi82My+j7sjFzGitUK2UsuJuTlnX+CEb7IX2mthJnLsIIZCExmUZpg==}
     engines: {node: '>=14.10.0', npm: '>=6.0.0'}
     hasBin: true
 
-  /@stencil/react-output-target@0.5.0(@stencil/core@3.3.0):
+  /@stencil/react-output-target@0.5.0(@stencil/core@4.0.0-beta.0):
     resolution: {integrity: sha512-m2UwgrFuVXzi1h4m6I+EWDGeZV4n1wPHkzbRCS9QaqysiQEN5VIi9zjLzvPQF7O9Gg3E/W28z0yElp0kY3VuFQ==}
     peerDependencies:
       '@stencil/core': ^2.9.0 || ^3.0.0
     dependencies:
-      '@stencil/core': 3.3.0
+      '@stencil/core': 4.0.0-beta.0
     dev: true
 
-  /@stencil/vue-output-target@0.8.5(@stencil/core@3.3.0):
+  /@stencil/vue-output-target@0.8.5(@stencil/core@4.0.0-beta.0):
     resolution: {integrity: sha512-AOse8WGzdH3lYhw+yQ/MYvobcaSOFd7B/xQ+oWv3GZLZpCw5fw+eOfFv1734mdA/Jjx+kWADlgsZ4w+cmiR+ZQ==}
     peerDependencies:
       '@stencil/core': ^2.9.0 || ^3.0.0
     dependencies:
-      '@stencil/core': 3.3.0
+      '@stencil/core': 4.0.0-beta.0
     dev: true
 
   /@szmarczak/http-timer@1.1.2:
