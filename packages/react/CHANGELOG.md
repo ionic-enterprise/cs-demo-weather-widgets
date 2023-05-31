@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.2
+
+### Patch Changes
+
+- 7024f79: test the Stencil v4 beta
+- Updated dependencies [7024f79]
+  - @ionic-enterprise/cs-demo-weather-widgets@3.1.2
+
 ## 3.1.1
 
 ### Patch Changes

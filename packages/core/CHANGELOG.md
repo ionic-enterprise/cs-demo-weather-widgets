@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.2
+
+### Patch Changes
+
+- 7024f79: test the Stencil v4 beta
+
 ## 3.1.1
 
 ### Patch Changes
