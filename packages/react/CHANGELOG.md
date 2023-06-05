@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.3
+
+### Patch Changes
+
+- 8958cae: upgrade the wrappers to be compatible with Stencil v4 Beta
+- Updated dependencies [8958cae]
+  - @ionic-enterprise/cs-demo-weather-widgets@3.1.3
+
 ## 3.1.2
 
 ### Patch Changes

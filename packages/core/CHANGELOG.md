@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.3
+
+### Patch Changes
+
+- 8958cae: upgrade the wrappers to be compatible with Stencil v4 Beta
+
 ## 3.1.2
 
 ### Patch Changes
