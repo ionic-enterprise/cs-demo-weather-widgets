@@ -57,14 +57,14 @@ The `components` build output needs to be ignored. However, we only want to igno
 
 ## Optionally `lint`
 
-The Stencil project is not generated with `lint` enabled by default. I like to have code that properly lints. However, the current state of the `@stencil/eslint-plugin` package is probably best described as "it has its issues."
+The Stencil project is not generated with `lint` enabled by default. I like to have code that properly lints. The community-driven `@stencil-community/eslint-plugin` package provides rules specifically for writing Stencil components. Please see the [Stencil Style Guide](https://stenciljs.com/docs/style-guide) for more information.
 
 ### If you would like to lint
 
 1. Install the package:
 
    ```bash
-   pnpm add -D @stencil/eslint-plugin @typescript-eslint/eslint-plugin@^4.0.0 eslint-plugin-react@^7.0.0 @typescript-eslint/parser@^4.0.0 typescript@^4.0.8 eslint@^7.0.0
+   pnpm add -D @stencil-community/eslint-plugin @typescript-eslint/eslint-plugin@^4.0.0 eslint-plugin-react@^7.0.0 @typescript-eslint/parser@^4.0.0 typescript@^4.0.8 eslint@^7.0.0
    ```
 
 2. Create a `.eslintrc.json` file:
