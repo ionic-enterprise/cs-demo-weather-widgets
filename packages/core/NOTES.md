@@ -71,10 +71,18 @@ The Stencil project is not generated with `lint` enabled by default. I like to h
 
    ```json
    {
-     "parserOptions": {
-       "project": "./tsconfig.json"
-     },
-     "extends": ["plugin:@stencil/recommended"]
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "extends": ["plugin:@stencil-community/recommended"],
+    "overrides": [
+      {
+        "files": ["*.ts", "*.tsx"],
+        "rules": {
+          "@stencil/strict-boolean-conditions": "off"
+        }
+      }
+    ]
    }
    ```
 
