@@ -46,13 +46,14 @@ git init
 
 ### Create Some Hooks
 
-Code formatting wars and people pushing code that does not lint or has failing tests can be serious problems. [Git hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) provide a great mechanism to avoid these kinds of issues through the enforce of standards.
+Code formatting wars and people pushing code that does not lint or has failing tests can be serious problems. [Git hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) provide a great mechanism to avoid these kinds of issues through the enforcement of standards.
 
 Here is an example:
 
 ```bash
-pnpm add -D --ignore-workspace-root-check @ionic/prettier-config husky prettier pretty-quick
+pnpm add -D --ignore-workspace-root-check @ionic/prettier-config husky prettier@2 pretty-quick
 ```
+> ***Note:*** Prettier 3 was recently published, but the `pretty-quick` package is [not yet compatible](https://github.com/azz/pretty-quick/issues/164). So we're installing `prettier@2` until it's been updated.
 
 [Husky](https://typicode.github.io/husky/#/) is used to manage the git hooks. [Prettier](https://prettier.io/) and [pretty-quick](https://www.npmjs.com/package/pretty-quick) are used to facilitate the code formatting according to [our standards](https://www.npmjs.com/package/@ionic/prettier-config).
 
