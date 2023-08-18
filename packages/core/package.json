@@ -26,7 +26,7 @@
     "eslint-plugin-react": "~7.32.2"
   },
   "devDependencies": {
-    "@stencil/angular-output-target": "~0.7.1",
+    "@stencil/angular-output-target": "^0.8.1",
     "@stencil/react-output-target": "~0.5.1",
     "@stencil/vue-output-target": "~0.8.6",
     "@types/jest": "^27.5.2",

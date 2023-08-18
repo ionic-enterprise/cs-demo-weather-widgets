@@ -27,7 +27,7 @@ importers:
   packages/angular:
     dependencies:
       '@ionic-enterprise/cs-demo-weather-widgets':
-        specifier: ^3.1.2
+        specifier: ^3.1.3
         version: link:../core
     devDependencies:
       '@angular-devkit/build-angular':
@@ -119,8 +119,8 @@ importers:
         version: 7.32.2(eslint@8.42.0)
     devDependencies:
       '@stencil/angular-output-target':
-        specifier: ~0.7.1
-        version: 0.7.1(@stencil/core@4.0.0-beta.0)
+        specifier: ^0.8.1
+        version: 0.8.1(@stencil/core@4.0.0-beta.0)
       '@stencil/react-output-target':
         specifier: ~0.5.1
         version: 0.5.1(@stencil/core@4.0.0-beta.0)
@@ -207,7 +207,7 @@ importers:
   packages/vue:
     dependencies:
       '@ionic-enterprise/cs-demo-weather-widgets':
-        specifier: ^3.1.2
+        specifier: ^3.1.3
         version: link:../core
     devDependencies:
       '@rollup/plugin-node-resolve':
@@ -2871,8 +2871,8 @@ packages:
       typescript: 4.9.5
     dev: false
 
-  /@stencil/angular-output-target@0.7.1(@stencil/core@4.0.0-beta.0):
-    resolution: {integrity: sha512-lxJbCAbyAQVAKGgEpNTjSF7GZZszbrJnNdNVgzuD1hLRFJyElA6kUSL0GQrZMbiPG5lC/cYdbQwpyWHX4xN8mw==}
+  /@stencil/angular-output-target@0.8.1(@stencil/core@4.0.0-beta.0):
+    resolution: {integrity: sha512-nO04lC7JxUT0bi2sTvBslz6aut1dVOvYRckf29a0l08XnRsDzIfT5e6f+c5HL9vCl4UFRq8fTQ+Og/G7Hlwtng==}
     peerDependencies:
       '@stencil/core': '>=2.0.0 || >=3 || >= 4.0.0-beta.0 || >= 4.0.0'
     dependencies:
