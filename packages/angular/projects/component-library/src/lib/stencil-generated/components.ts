@@ -1,6 +1,6 @@
 /* tslint:disable */
 /* auto-generated angular directive proxies */
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, NgModule } from '@angular/core';
 
 import { ProxyCmp } from './angular-component-lib/utils';
 
@@ -30,6 +30,13 @@ export class CsdemoCondition {
 }
 
 
+@NgModule({
+  declarations: [CsdemoCondition],
+  exports: [CsdemoCondition]
+})
+export class CsdemoConditionModule { }
+
+
 export declare interface CsdemoCondition extends Components.CsdemoCondition {}
 
 
@@ -51,6 +58,13 @@ export class CsdemoDailyForecast {
     this.el = r.nativeElement;
   }
 }
+
+
+@NgModule({
+  declarations: [CsdemoDailyForecast],
+  exports: [CsdemoDailyForecast]
+})
+export class CsdemoDailyForecastModule { }
 
 
 export declare interface CsdemoDailyForecast extends Components.CsdemoDailyForecast {}
@@ -76,6 +90,13 @@ export class CsdemoTemperature {
 }
 
 
+@NgModule({
+  declarations: [CsdemoTemperature],
+  exports: [CsdemoTemperature]
+})
+export class CsdemoTemperatureModule { }
+
+
 export declare interface CsdemoTemperature extends Components.CsdemoTemperature {}
 
 
@@ -97,6 +118,13 @@ export class CsdemoUvIndex {
     this.el = r.nativeElement;
   }
 }
+
+
+@NgModule({
+  declarations: [CsdemoUvIndex],
+  exports: [CsdemoUvIndex]
+})
+export class CsdemoUvIndexModule { }
 
 
 export declare interface CsdemoUvIndex extends Components.CsdemoUvIndex {}

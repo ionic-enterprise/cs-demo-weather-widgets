@@ -7,10 +7,10 @@ export const config: Config = {
   namespace: 'csdemoweather',
   outputTargets: [
     angular({
+      outputType: 'scam',
       componentCorePackage: '@ionic-enterprise/cs-demo-weather-widgets',
       directivesProxyFile: '../angular/projects/component-library/src/lib/stencil-generated/components.ts',
       directivesArrayFile: '../angular/projects/component-library/src/lib/stencil-generated/index.ts',
-      includeImportCustomElements: true,
     }),
     react({
       componentCorePackage: '@ionic-enterprise/cs-demo-weather-widgets',
